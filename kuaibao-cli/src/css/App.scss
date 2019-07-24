@@ -1,0 +1,24 @@
+.App {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .mainTop {
+    height: 2.85rem;
+    background: lightblue;
+    width: 100%;
+  }
+  .mainBody {
+    flex: 1;
+    overflow: auto;
+  }
+  .mainBottom {
+    height: 3.125rem;
+    background: lightblue;
+    width: 100%;
+  }
+}
