@@ -1,9 +1,11 @@
 import React,{Component} from 'react';
+import NewsTop from './components/newsTop';
+
 
 class Order extends Component{
     render(){
-        return <div>
-            头条 
+        return <div className='News_Top'>
+            <NewsTop/>
         </div>
     }
 }

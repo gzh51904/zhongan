@@ -73,12 +73,12 @@ class App extends React.Component {
           {
             this.state.navs.map(item => {
               return (
-                <a key={item.name} 
+                <a key={item.name} href='aa:;'
                   onClick={this.goto.bind(this, item.path)} 
                   className='mainBottomItem'
                 >
-                  {this.state.actBottomItem==item.name?<span><img src={item.img_on}/></span>:<span><img src={item.img}/></span>}       
-                  <p style={this.state.actBottomItem==item.name?{color:'#12c287'}:{color:'#404040'}}>{item.title}</p>
+                  {this.state.actBottomItem===item.name?<span><img src={item.img_on} alt=''/></span>:<span><img src={item.img} alt=''/></span>}       
+                  <p style={this.state.actBottomItem===item.name?{color:'#12c287'}:{color:'#404040'}}>{item.title}</p>
                 </a>
               )
             })
