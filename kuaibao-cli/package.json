@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "antd": "^3.20.5"
+    "antd": "^3.20.5",
+    "react-redux": "^7.1.0"
   }
 }
