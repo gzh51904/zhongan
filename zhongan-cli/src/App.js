@@ -19,26 +19,40 @@ class App extends React.Component {
       navs: [{
         name: 'Home',
         path: '/home',
-        title: '首页'
+        title: '首页',
+        img:require('./assets/img/home.png'),
+        img_on:require('./assets/img/home_on.png')
       }, {
         name: 'News',
         path: '/news',
-        title: '头条'
+        title: '头条',
+        img:require('./assets/img/toutiao.png'),
+        img_on:require('./assets/img/toutiao_on.png')
       }, {
         name: 'Discover',
         path: '/discover',
-        title: '发现'
+        title: '发现',
+        img:require('./assets/img/find.png'),
+        img_on:require('./assets/img/find_on.png')
       }, {
         name: 'Mine',
         path: '/mine',
-        title: '我的'
-      }]
+        title: '我的',
+        img:require('./assets/img/my.png'),
+        img_on:require('./assets/img/my_on.png')
+      }],
+      actBottomItem:'Home'
     }
     this.goto = this.goto.bind(this);
   }
-  goto(path){
+  goto(path) {
+    let name = this.state.navs.filter(item=>item.path===path)[0].name;
     this.props.history.push({
-      pathname:path
+      pathname: path
+    })
+
+    this.setState({
+      actBottomItem:name
     })
   }
   render() {
@@ -57,8 +71,16 @@ class App extends React.Component {
         </div>
         <div className="mainBottom">
           {
-            this.state.navs.map(item=>{
-              return <span key={item.name} onClick={this.goto.bind(this,item.path)} style={{marginRight:'15px'}}>{item.title}</span>
+            this.state.navs.map(item => {
+              return (
+                <a key={item.name} 
+                  onClick={this.goto.bind(this, item.path)} 
+                  className='mainBottomItem'
+                >
+                  {this.state.actBottomItem==item.name?<span><img src={item.img_on}/></span>:<span><img src={item.img}/></span>}       
+                  <p style={this.state.actBottomItem==item.name?{color:'#12c287'}:{color:'#404040'}}>{item.title}</p>
+                </a>
+              )
             })
           }
         </div>
