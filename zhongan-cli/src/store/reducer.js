@@ -4,7 +4,7 @@ import {CHANGE_BANNER} from './Actions'
 //初始化仓库
 let initState = {
     username:'guo',
-    goodlist:[]
+    navcolor:'#67D1DE'
 }
 
 //仓库reducer

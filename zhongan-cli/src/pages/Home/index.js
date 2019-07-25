@@ -2,18 +2,18 @@ import React,{Component} from 'react';
 import './Home.scss';
 import 'antd/dist/antd.css';
 import './guo_icon/iconfont.css'
-import {Icon,Input, Tooltip,Menu,Carousel} from 'antd'
+import {Icon,Input, Tooltip,Menu} from 'antd'
 import { Switch, Route } from 'react-router-dom';
 
 import { connect } from 'react-redux';  //通过react-redux引入store
 
 import MyHome from './component/MyHome/index.jsx'
-import Health from './component/Health'
-import Bus from './component/Bus'
-import Tourist from './component/Tourist'
-import Treasure from './component/Treasure'
-import Penates from './component/Penates'
-import Parent_child from './component/Parent_child'
+import Health from './component/Health/index.jsx'
+import Bus from './component/Bus/index.jsx'
+import Tourist from './component/Tourist/index.jsx'
+import Treasure from './component/Treasure/index.jsx'
+import Penates from './component/Penates/index.jsx'
+import Parent_child from './component/Parent_child/index.jsx'
 
 const allRouter={MyHome,Health,Bus,Tourist,Treasure,Penates,Parent_child}
 
@@ -52,11 +52,13 @@ class Home extends Component{
                 title:'亲子'
             },],
             navcolor:'#67D1DE',
-            current:'Home'
+            current:'MyHome'
         }
         // this.beforeChange=this.beforeChange.bind(this)
     }
-  
+    componentWillMount(){
+        window.location.hash = '/Home/myhome'
+    }
     //导航点击
     handleClick = e => {
         let {history} = this.props
@@ -102,7 +104,7 @@ class Home extends Component{
                     </div>
                 </div>
             </div>
-         
+            <div className='g_tops'></div>
            
             <Switch>
                 {
