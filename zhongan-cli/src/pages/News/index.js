@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 
-class Mine extends Component{
+class Order extends Component{
     render(){
         return <div>
-            Mine {this.props.match.params.id}
+            头条 
         </div>
     }
 }
 
-export default Mine;
+export default Order;

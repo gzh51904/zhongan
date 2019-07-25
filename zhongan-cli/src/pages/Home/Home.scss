@@ -1,0 +1,48 @@
+
+.top{
+    width:100%;
+    height:5rem;
+    // background: #f02;
+    position: fixed;
+    top:0px;
+    z-index:2;
+    .search{
+        margin-top:2%;
+        height:2rem;
+        .ant-input-affix-wrapper{
+            float:left;
+            width:70%;
+            height:90%;
+            margin-right:3%;
+        }
+        a{
+            width:9%;
+            height:90%;
+            float:left;
+            i{
+                display: inline-block;
+                width:100%;
+                height:100%;
+                font-size: 1.625rem;
+                color:#fff;
+            }
+        }
+    }
+    .navs{
+        // position: relative;
+        height:3rem;
+        // background: #58bc58;
+        display: flex;
+        overflow: hidden;
+        flex-direction: row;
+        overflow: auto;
+        .navs_box{
+            .ant-menu-horizontal{
+                 background: none!important;
+                 height:100%!important;
+                }
+            }
+           
+       
+    }
+}
