@@ -9,10 +9,7 @@ let initState = {
 
 //仓库reducer
 let reducer = (state=initState,action)=>{
-    // store.dispath({type:'ADD_GOOD',payload:{username}})
-    // console.log(action)
     switch(action.type){
-        // store.dispath({type:'add_to_cart',payload:{id,name,price}})
         case CHANGE_BANNER:
             return {
                 ...state,

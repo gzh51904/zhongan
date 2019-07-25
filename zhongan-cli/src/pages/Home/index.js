@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './Home.scss';
+import './scss/Home.scss';
 import 'antd/dist/antd.css';
 import './guo_icon/iconfont.css'
 import {Icon,Input, Tooltip,Menu} from 'antd'
@@ -51,13 +51,20 @@ class Home extends Component{
                 path:'/parent_child',
                 title:'亲子'
             },],
-            navcolor:'#67D1DE',
-            current:'MyHome'
+            // navcolor:'#67D1DE',
+            current:'MyHome',
+            judge:true,
         }
         // this.beforeChange=this.beforeChange.bind(this)
     }
     componentWillMount(){
         window.location.hash = '/Home/myhome'
+    }
+    componentDidUpdate(){
+        if(this.state.judge===false){
+            this.refs.g_tiao.focus();
+        }
+        
     }
     //导航点击
     handleClick = e => {
@@ -66,27 +73,33 @@ class Home extends Component{
             current: e.key,
           });
         let id=(this.state.navList.filter(item=>item.name===e.key))[0].path
-        console.log(id)
+        // console.log(id)
         history.push('/Home'+id)
         // console.log('click ', e);
       
       };
     render(){
-        return <div>
+        return (
+            this.state.judge?<div>
             <div  style={{background: this.props.navscolor}} className='top'>
                 <div className='search'> 
-                    <a href=''><i className='iconfont icon-erji'></i></a>
+                    <a href='xxx:;'><i className='iconfont icon-erji'></i></a>
                     <Input
-                        placeholder="Enter your username"
+                        placeholder="甲状腺结节百万医疗险"
                         prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />}
                         suffix={
                         <Tooltip title="Extra information">
                             <Icon type="smile" theme="twoTone" twoToneColor="#eb2f96" />
                         </Tooltip>
                         }
+                        onFocus={()=>{
+                            this.setState({
+                                judge:false
+                            })
+                        }}
                     />
-                    <a href=''><i className='iconfont icon-riqi'></i></a>
-                    <a href=''><i className='iconfont icon-xiaoxi'></i></a>
+                    <a href='xxx:;'><i className='iconfont icon-riqi'></i></a>
+                    <a href='xxx:;'><i className='iconfont icon-xiaoxi'></i></a>
                 </div>
                 <div className='navs'>
                     <div className='navs_box'>
@@ -105,21 +118,81 @@ class Home extends Component{
                 </div>
             </div>
             <div className='g_tops'></div>
-           
+                        
             <Switch>
                 {
                     this.state.navList.map(item=><Route key={item.name} path={'/Home'+item.path} component={allRouter[item.name]}/>)
                 }
             </Switch>
            
-            
-            <p style={{height:'500px',background:'red'}}>首页</p>
-            <p style={{height:'500px',background:'yellow'}}>首页</p>
-            <p style={{height:'500px',background:'red'}}>首页</p>
-            <p style={{height:'500px',background:'green'}}>首页</p>
-            <p style={{height:'500px',background:'red'}}>首页</p>
-           
         </div>
+        :
+        <>
+        <div  style={{background: '#fff'}} className='top'>
+             <div className='search'> 
+                <Input
+                    ref='g_tiao'
+                    placeholder="甲状腺结节百万医疗险"
+                    prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                />
+                <a href='xxx:;'onClick={()=>{
+                        this.setState({
+                        judge:true
+                    })
+                }}>取消</a>
+            </div>
+            <div className="g_type">
+                <a href='xxx:;'>
+                    <img src='https://static-insurance-cdn.zhongan.com/assembler/img/icon-liab-res1.png' alt=''/>
+                    <p>健康</p>
+                </a>
+                <a href='xxx:;'>
+                    <img src='https://static-insurance-cdn.zhongan.com/assembler/img/icon-liab-res3.png' alt=''/>
+                    <p>意外</p>
+                </a>
+                <a href='xxx:;'>
+                    <img src='https://static-insurance-cdn.zhongan.com/assembler/img/icon-liab-res2.png' alt=''/>
+                    <p>亲子</p>
+                </a>
+                <a href='xxx:;'>
+                    <img src='https://static-insurance-cdn.zhongan.com/assembler/img/icon-liab-res4.png' alt=''/>
+                    <p>汽车</p>
+                </a>
+                <a href='xxx:;'>
+                    <img src='https://open-cdn.zhongan.com/dm-instrument/images/jtzzc7swuzd9gu8iyu2jy2z8dkkqfdp3ntqfcoip.png' alt=''/>
+                    <p>旅行</p>
+                </a>
+                <a href='xxx:;'>
+                    <img src='https://open-cdn.zhongan.com/dm-instrument/images/nph6pl4r4ru6wmqrtak4tikqe6mrumwjtwjwiqtl.png' alt=''/>
+                    <p>家财</p>
+                </a>
+                <a href='xxx:;'>
+                    <img src='https://open-cdn.zhongan.com/dm-instrument/images/79ptflhz5qk7tkfhhqvbsczkfis1tp5aykwaz3az.png' alt=''/>
+                    <p>众安经济</p>
+                </a>
+                <a href='xxx:;'>
+                    <img src='https://open-cdn.zhongan.com/dm-instrument/images/ggcoharenuhwspoyxjyrnkdz2l937opbkqj2wohi.png' alt=''/>
+                    <p>特色服务</p>
+                </a>
+               
+            
+            </div>
+            <div className='g_hot'>
+                <h2>热门搜索</h2>
+                <div className='sousuo'>
+                    <span>甲状腺结节百万医疗险</span>
+                    <span>尊享e生</span>
+                    <span>定制保险</span>
+                    <span>百姓保住院医疗险</span>
+                    <span>撒医疗</span>
+                    <span>众享e家</span>
+                    <span>住院</span>
+                </div>
+            </div>
+        </div>
+           
+            </>
+        )
     }
 }
 
