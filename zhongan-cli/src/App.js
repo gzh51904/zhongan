@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect, Switch, withRouter } from "react-router-dom";
 
 import Home from './pages/Home';
-import Order from './pages/Order';
+import News from './pages/News';
 import Discover from './pages/Discover/index';
 import Mine from './pages/Mine';
 
@@ -61,7 +61,7 @@ class App extends React.Component {
         <div className="mainBody">
           <Switch>
             <Route path={'/Home'} component={Home} />
-            <Route path={'/Order'} component={Order} />
+            <Route path={'/News'} component={News} />
             <Route path={'/Discover'} component={Discover} />
             <Route path={'/Mine'} component={Mine} />
             <Route path={'/404'} render={() => <div>页面不存在！</div>} />
