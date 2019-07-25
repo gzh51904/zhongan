@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect, Switch, withRouter } from "react-router-dom";
 
 import Home from './pages/Home';
-import Order from './pages/Order';
+import News from './pages/News';
 import Discover from './pages/Discover/index';
 import Mine from './pages/Mine';
 
@@ -21,12 +21,12 @@ class App extends React.Component {
         path: '/home',
         title: '首页'
       }, {
-        name: 'Order',
-        path: '/Order',
-        title: '订单'
+        name: 'News',
+        path: '/news',
+        title: '头条'
       }, {
         name: 'Discover',
-        path: '/Discover',
+        path: '/discover',
         title: '发现'
       }, {
         name: 'Mine',
@@ -44,13 +44,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-
         <div className="mainBody">
           <Switch>
-            <Route path={'/Home'} component={Home} />
-            <Route path={'/Order'} component={Order} />
-            <Route path={'/Discover'} component={Discover} />
-            <Route path={'/Mine'} component={Mine} />
+            <Route path={'/home'} component={Home} />
+            <Route path={'/news'} component={News} />
+            <Route path={'/discover'} component={Discover} />
+            <Route path={'/mine'} component={Mine} />
             <Route path={'/404'} render={() => <div>页面不存在！</div>} />
             <Redirect from="/" to="/home" />
             <Redirect from="/*" to="/404" />
