@@ -21,8 +21,8 @@ class Utrip extends Component{
         // console.log('navsabc',this.props.navsabc)
         let Utrippic = this.props.navsabc[1].imgurl
         return(
-            <div>
-                <img src={Utrippic} alt="Utrip" style={{width:'100%',padding:'10px 20px 0px 20px'}}/>
+            <div style={{padding:'10px 20px 0px 20px',height:'114px'}}>
+                <img src={Utrippic} alt="Utrip" style={{width:'100%'}}/>
             </div>
         )
     }

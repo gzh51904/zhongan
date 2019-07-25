@@ -21,8 +21,8 @@ class Uhealth extends Component{
         // console.log('navsabc',this.props.navsabc)
         let Uhealthpic = this.props.navsabc[0].imgurl
         return(
-            <div>
-                <img src={Uhealthpic} alt="Uhealth" style={{width:'100%',padding:'10px 20px 0px 20px'}}/>
+            <div style={{padding:'10px 20px 0px 20px',height:'114px'}}>
+                <img src={Uhealthpic} alt="Uhealth" style={{width:'100%'}}/>
             </div>
         )
     }

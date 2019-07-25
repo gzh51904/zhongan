@@ -13,6 +13,10 @@ import Ucarowner from './MyNav/Ucarowner';
 
 import {connect} from 'react-redux'
 
+// 引入插件video-react
+import { Player, BigPlayButton } from 'video-react';
+import "../../../node_modules/video-react/dist/video-react.css";
+
 let AllRouter={
     Uhealth,
     Utrip,
@@ -59,7 +63,7 @@ class Discover extends Component {
             //     path:'/ucarowner',
             //     imgurl:'https://dm.zacdn.cn/m/u-member/static/img/package/auto/banner_auto.png'
             // }],
-            current: 'Uhealth',
+            current: 'Uhealth'
         }
         this.handleClick = this.handleClick.bind(this)
     }
@@ -79,14 +83,22 @@ class Discover extends Component {
         })
 
     }
+    componentWillMount(){
+        // console.log("this.props:",this.props)
+        this.props.history.push({
+            pathname:'/discover/uhealth'
+        })
+    }
+
+  
     render() {
         // console.log('navsabc',this.props.navsabc)
         return (
             <div className="DisMain" style={{ width: '100%', height: '100%' }}>
-                <div className="mainTop">
-                    <header>我是顶部</header>
-                </div>
                 <div className="DisNotLogin">
+                    <div className="mainTop">
+                        <span>发现</span>
+                    </div>
                     <img src={require("../../assets/img/notLogin.png")} alt="登录享受权益"/>
                     <Button className="DisNotLogin" >登录查看会员权益</Button>
                 </div>
@@ -175,6 +187,15 @@ class Discover extends Component {
                         </a>
                     </div>  
                 </div>   
+                <div className="Disvideo">
+                    <h3>尊享e生2019版</h3>
+                    {/* <Player ref="player" videoId="video-1" poster="https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg">
+                        <source src="https://static-insurance-cdn.zhongan.com/video/5020772111140532.mp4"/>
+                    </Player> */}
+                    <Player src="https://static-insurance-cdn.zhongan.com/video/5020772111140532.mp4" poster="https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg">
+                        <BigPlayButton position="center" />
+                    </Player>
+                </div>
             </div>
         )
     }

@@ -1,7 +1,24 @@
+
 .DisMain {
   background: #eeeeee;
 
+  
   .DisNotLogin {
+    .mainTop {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0px;
+      // position: fixed;
+      z-index: 100;
+      height: 50px;
+      text-align: center;
+      background: #fff !important;
+      padding-top: 10px !important;
+      >span {
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+    }
     // width: 100% !important;
     // height: 200px;
     position: relative;
@@ -36,7 +53,7 @@
         line-height: 160px;
         overflow: hidden;
 
-        h3 {
+        >h3 {
           color: #fff;
         }
       }
@@ -74,7 +91,7 @@
       }
     }
 
-    h3 {
+    >h3 {
       font-size: 20px;
       line-height: 30px;
       margin: 0px 0px 5px 5px;
@@ -84,7 +101,7 @@
   }
 
   .Disfuli {
-    h3 {
+    >h3 {
       font-size: 20px;
       line-height: 30px;
       margin: 0px 0px 5px 5px;
@@ -94,7 +111,7 @@
 
     :nth-child(2),
     :nth-child(3) {
-      float: left;
+      display: inline-block;
       width: 45%;
       margin: 0 2%;
 
@@ -116,20 +133,19 @@
   }
 
   .Disjifen {
-    h3 {
+    padding: 0px 10px;
+
+    >h3 {
       font-size: 20px;
       line-height: 30px;
       margin: 0px 0px 5px 5px;
       padding: 10px 0px 0px 15px;
       font-weight: 600;
     }
-    >div {
-      float: left;
-    }
 
     :nth-child(2),
     :nth-child(3) {
-      float: left;
+      display: inline-block;
       width: 45%;
       margin: 0 2%;
 
@@ -140,9 +156,11 @@
         }
       }
     }
-  
+
     :nth-child(4) {
-      float: left;
+      display: inline-block;
+
+      width: 49.4%;
       width: 45%;
       margin: 0 2%;
 
@@ -153,18 +171,36 @@
         }
       }
     }
-   
+
     :nth-child(5),
     :nth-child(6) {
       float: left;
+      width: 49.4%;
       width: 20%;
-      margin: 0 2%;
+      margin: 5px 2%;
 
       >a {
         >img {
           width: 100%;
           height: 100%;
         }
+      }
+    }
+  }
+
+  .Disvideo {
+    >h3 {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 0px 0px 5px 5px;
+      padding: 10px 0px 0px 15px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    :nth-child(2) {
+      >img {
+        width: 100%;
       }
     }
   }

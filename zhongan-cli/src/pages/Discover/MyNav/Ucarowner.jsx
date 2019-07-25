@@ -21,8 +21,8 @@ class Ucarowner extends Component{
         // console.log('navsabc',this.props.navsabc)
         let Ucarownerpic = this.props.navsabc[3].imgurl
         return(
-            <div>
-                <img src={Ucarownerpic} alt="Ucarowner" style={{width:'100%',padding:'10px 20px 0px 20px'}}/>
+            <div style={{padding:'10px 20px 0px 20px',height:'114px'}}>
+                <img src={Ucarownerpic} alt="Ucarowner" style={{width:'100%'}}/>
             </div>
         )
     }

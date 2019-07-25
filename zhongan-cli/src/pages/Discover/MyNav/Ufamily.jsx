@@ -21,8 +21,8 @@ class Ufamily extends Component{
         // console.log('navsabc',this.props.navsabc)
         let Ufamilypic = this.props.navsabc[2].imgurl
         return(
-            <div>
-                <img src={Ufamilypic} alt="Ufamily" style={{width:'100%',padding:'10px 20px 0px 20px'}}/>
+            <div style={{padding:'10px 20px 0px 20px',height:'114px'}}>
+                <img src={Ufamilypic} alt="Ufamily" style={{width:'100%'}}/>
             </div>
         )
     }
