@@ -3,11 +3,13 @@ import { Route, Redirect, Switch, withRouter } from "react-router-dom";
 
 import Home from './pages/Home';
 import Order from './pages/Order';
-import Goodslist from './pages/GoodsList';
+import Discover from './pages/Discover/index';
 import Mine from './pages/Mine';
 
 import "./css/App.scss";
 import "./css/base.css";
+import 'antd/dist/antd.css';
+
 
 // @withRouter
 class App extends React.Component {
@@ -23,9 +25,9 @@ class App extends React.Component {
         path: '/Order',
         title: '订单'
       }, {
-        name: 'Goodslist',
-        path: '/Goodslist',
-        title: '产品库'
+        name: 'Discover',
+        path: '/Discover',
+        title: '发现'
       }, {
         name: 'Mine',
         path: '/mine',
@@ -42,14 +44,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {/* <div className="mainTop">
-          <header>我是顶部</header>
-        </div> */}
+
         <div className="mainBody">
           <Switch>
             <Route path={'/Home'} component={Home} />
             <Route path={'/Order'} component={Order} />
-            <Route path={'/Goodslist'} component={Goodslist} />
+            <Route path={'/Discover'} component={Discover} />
             <Route path={'/Mine'} component={Mine} />
             <Route path={'/404'} render={() => <div>页面不存在！</div>} />
             <Redirect from="/" to="/home" />

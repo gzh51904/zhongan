@@ -71,6 +71,7 @@ class Home extends Component{
       };
     render(){
         return <div>
+<<<<<<< HEAD
             <div  style={{background: this.props.navscolor}} className='top'>
                 <div className='search'> 
                     <a href=''><i className='iconfont icon-erji'></i></a>
@@ -112,6 +113,9 @@ class Home extends Component{
            
             
             <p style={{height:'500px',background:'red'}}>首页</p>
+=======
+            <p style={{height:'500px',background:'red'}}>首页111111</p>
+>>>>>>> 7932c018ec44a770035f73a3710c0c6a5b7f73aa
             <p style={{height:'500px',background:'yellow'}}>首页</p>
             <p style={{height:'500px',background:'red'}}>首页</p>
             <p style={{height:'500px',background:'green'}}>首页</p>
