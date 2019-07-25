@@ -8,7 +8,7 @@ class Parent_child extends React.Component{
         }
     }
     render(){
-        return <div>f</div>
+        return <div>sdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
     }
 }
 
