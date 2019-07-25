@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>React App</title>
-    <style>
-      body,html{
-        width:100%;
-        height:100%;
-        margin:0;
-        padding:0;
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>React App</title>
+  <style>
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media screen and (min-width:760px) {
+      html {
+        font-size: 16px;
       }
-    </style>
-  </head>
-  <body>
-    <div id="root" style="height:100%;width:100%"></div>
-  </body>
+    }
+
+    @media screen and (min-width:992px) {
+      html {
+        font-size: 36px;
+      }
+    }
+
+    @media screen and (min-width:1200px) {
+      html {
+        font-size: 46px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root" style="height:100%;width:100%"></div>
+</body>
+
 </html>
