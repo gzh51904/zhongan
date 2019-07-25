@@ -1,7 +1,4 @@
 import React,{Component} from 'react';
-<<<<<<< HEAD
-import './Home.scss'
-=======
 import './Home.scss';
 import 'antd/dist/antd.css';
 import './guo_icon/iconfont.css'
@@ -21,7 +18,6 @@ import Parent_child from './component/Parent_child'
 const allRouter={MyHome,Health,Bus,Tourist,Treasure,Penates,Parent_child}
 
 
->>>>>>> 14e5bca11294ffcd5456cb239a12c009b3f6086d
 class Home extends Component{
     constructor(){
         super();
