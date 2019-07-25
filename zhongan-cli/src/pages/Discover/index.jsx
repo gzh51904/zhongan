@@ -5,7 +5,7 @@ import "./Discover.scss";
 import { Carousel } from 'antd';
 class Discover extends Component {
     constructor() {
-        super();
+       super();
 
         this.state = {
             img: [{
@@ -25,16 +25,16 @@ class Discover extends Component {
     }
     render() {
         return (
-            <div style={{ width: '100%', height: '100%' }}>
+            <div className="DisMain" style={{ width: '100%', height: '100%' }}>
                 <div className="mainTop">
                     <header>我是顶部</header>
                 </div>
                 <div style={{ width: '100%', height: '170px',background:'orange' }}>
 
                 </div>
-                <Carousel effect="fade" autoplay>
+                <Carousel className="DisMainCarousel" effect="fade" autoplay>
                     {
-                        this.state.img.map((item) => {
+                        this.state.img.map(item => {
                             return (
                                 <img key={item.name} src={item.imgurl} alt={item.name} style={{ width: '100%', height: '100%' }} />
                             )

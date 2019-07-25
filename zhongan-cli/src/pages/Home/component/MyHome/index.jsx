@@ -1,5 +1,5 @@
 import React from 'react'
-import {Icon,Input, Tooltip,Menu,Carousel} from 'antd'
+import {Carousel} from 'antd'
 
 import {connect} from 'react-redux';
 import {change_banner} from '../../../../store/Actions'
@@ -25,7 +25,7 @@ class MyHome extends React.Component{
     }
     render(){
         return <div>
-             <div style={{background:this.state.navcolor}} className='banner'>
+             <div style={{background:this.props.navscolor}} className='banner'>
                 <div className='banner_nav'>
                      <Carousel  autoplay beforeChange={this.beforeChange.bind(this)}>
                      
@@ -67,9 +67,12 @@ class MyHome extends React.Component{
     }
 }
 
-let mapStateToProps = (state,ownprops)=>{
-    return {}
-}
+
+let mapStateToProps = (state)=>{
+    return {
+      navscolor:state.navcolor
+    }
+  }
 let mapDispatchToPro=(dispatch,ownprops)=>{
     return {
         changeBanner(data){
