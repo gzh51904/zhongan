@@ -58,7 +58,7 @@ class Home extends Component{
         // this.beforeChange=this.beforeChange.bind(this)
     }
     componentWillMount(){
-        window.location.hash = '/Home/myhome'
+        window.location.hash = '/home/myhome'
     }
     componentDidUpdate(){
         if(this.state.judge===false){
@@ -74,7 +74,7 @@ class Home extends Component{
           });
         let id=(this.state.navList.filter(item=>item.name===e.key))[0].path
         // console.log(id)
-        history.push('/Home'+id)
+        history.push('/home'+id)
         // console.log('click ', e);
       
       };
@@ -121,7 +121,7 @@ class Home extends Component{
                         
             <Switch>
                 {
-                    this.state.navList.map(item=><Route key={item.name} path={'/Home'+item.path} component={allRouter[item.name]}/>)
+                    this.state.navList.map(item=><Route key={item.name} path={'/home'+item.path} component={allRouter[item.name]}/>)
                 }
             </Switch>
            
