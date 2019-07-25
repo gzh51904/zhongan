@@ -42,9 +42,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="mainTop">
+        {/* <div className="mainTop">
           <header>我是顶部</header>
-        </div>
+        </div> */}
         <div className="mainBody">
           <Switch>
             <Route path={'/Home'} component={Home} />
