@@ -69,7 +69,7 @@ class Home extends Component{
     //导航点击
     handleClick = e => {
         let {history} = this.props
-        console.log("e",e)
+        // console.log("e",e)
         this.setState({
             current: e.key,
           });

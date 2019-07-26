@@ -2,65 +2,71 @@ import React from 'react'
 
 import '../../scss/Gcomponent.scss'
 
+import axios from 'axios'
+
 class Wealth extends React.Component{
     constructor(){
         super();
         this.state={
-
+            insurance:[],
+            type:[],
         }
+    }
+    async componentWillMount(){
+        let {data} = await axios.get('http://47.94.157.240:2017/zhongangoods',{
+            params:{categoryOneName:'健康'}
+        });
+        // console.log(data);
+        let typearr = [];
+        data.forEach(item=>{
+            if(typearr.length===0){
+                typearr.unshift(item.categoryTwoName)
+            }
+            else{
+                if(typearr.some(ite=>ite===item.categoryTwoName)===false){
+                    typearr.unshift(item.categoryTwoName);
+                }
+            }
+        })
+        this.setState({
+            insurance:data,
+            type:typearr
+        })
+
     }
     render(){
         return <div className='g_blank'>
-            <div className="g_twotab">
-                <span>关爱父母</span>
-                <span>成人必备</span>
-            </div>
-            <ul className='g_baoxian'>
-                <h3>关爱父母</h3>
-                <li>
-                    <img src="https://open-cdn.zhongan.com/dm/assembler/5834c1b2e5dbcc731d65855f187ba96b.png" alt=""/>
-                    <div className="miaoshu">
-                        <h5>尊享e生爸妈版</h5>
-                        <p>责任内赔付比例100% | 65岁可投保 | 可选质子重离子</p>
-                        <p><span>￥</span><span>1399</span>   起</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://open-cdn.zhongan.com/dm/assembler/5834c1b2e5dbcc731d65855f187ba96b.png" alt=""/>
-                    <div className="miaoshu">
-                        <h5>尊享e生爸妈版</h5>
-                        <p>责任内赔付比例100% | 65岁可投保 | 可选质子重离子</p>
-                        <p><span>￥</span><span>1399</span>   起</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://open-cdn.zhongan.com/dm/assembler/5834c1b2e5dbcc731d65855f187ba96b.png" alt=""/>
-                    <div className="miaoshu">
-                        <h5>尊享e生爸妈版</h5>
-                        <p>责任内赔付比例100% | 65岁可投保 | 可选质子重离子</p>
-                        <p><span>￥</span><span>1399</span>   起</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="https://open-cdn.zhongan.com/dm/assembler/5834c1b2e5dbcc731d65855f187ba96b.png" alt=""/>
-                    <div className="miaoshu">
-                        <h5>尊享e生爸妈版</h5>
-                        <p>责任内赔付比例100% | 65岁可投保 | 可选质子重离子</p>
-                        <p><span>￥</span><span>1399</span>   起</p>
-                    </div>
-                </li>
-            </ul>
-            <ul className='g_baoxian'>
-                <h3>关爱父母</h3>
-                <li>
-                    <img src="https://open-cdn.zhongan.com/dm/assembler/5834c1b2e5dbcc731d65855f187ba96b.png" alt=""/>
-                    <div className="miaoshu">
-                        <h5>尊享e生爸妈版</h5>
-                        <p>责任内赔付比例100% | 65岁可投保 | 可选质子重离子</p>
-                        <p><span>￥</span><span>1399</span>   起</p>
-                    </div>
-                </li>
-            </ul>
+              <div className="g_twotab">
+                  {
+                      this.state.type.map((item,idx)=><span key={idx}>{item}</span>)
+                  }
+             </div>
+             {
+                 this.state.type.map((ite,idx)=>{
+                     return (
+                         <ul className='g_baoxian' key={idx+100}>
+                            <h3>{ite}</h3>
+                            {
+                                this.state.insurance.map(item=>{
+                                    if(ite===item.categoryTwoName){
+                                        return(
+                                            <li key={item.goodsCode}>
+                                                <img src={item.imageUrl} alt=""/>
+                                                <div className="miaoshu">
+                                                    <h5>{item.title}</h5>
+                                                    <p>{item.summary}</p>
+                                                    <p><span>￥</span><span>{item.price}</span>   起</p>
+                                                </div>
+                                            </li> 
+                                        ) 
+                                    }
+                                })
+                            }
+                        </ul>   
+                    ) 
+                })
+             }
+
         </div>
     }
 }
