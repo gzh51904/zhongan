@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import News from './pages/News';
 import Discover from './pages/Discover/index';
 import Mine from './pages/Mine';
+import Goods from './pages/Goods';
+
 
 import "./css/App.scss";
 import "./css/base.css";
@@ -60,10 +62,11 @@ class App extends React.Component {
       <div className="App">
         <div className="mainBody">
           <Switch>
-            <Route path={'/Home'} component={Home} />
-            <Route path={'/News'} component={News} />
-            <Route path={'/Discover'} component={Discover} />
-            <Route path={'/Mine'} component={Mine} />
+            <Route path={'/home'} component={Home} />
+            <Route path={'/news'} component={News} />
+            <Route path={'/discover'} component={Discover} />
+            <Route path={'/mine'} component={Mine} />
+            <Route path={'/goods'} component={Goods} />
             <Route path={'/404'} render={() => <div>页面不存在！</div>} />
             <Redirect from="/" to="/home" />
             <Redirect from="/*" to="/404" />

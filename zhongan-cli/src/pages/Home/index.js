@@ -179,7 +179,10 @@ class Home extends Component{
             
             </div>
             <div className='g_hot'>
-                <h2>热门搜索</h2>
+                <h2 onClick={()=>{
+                    console.log(555)
+                    this.props.history.push('/goods')
+                }}>热门搜索</h2>
                 <div className='sousuo'>
                     <span>甲状腺结节百万医疗险</span>
                     <span>尊享e生</span>

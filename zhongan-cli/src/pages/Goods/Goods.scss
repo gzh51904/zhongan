@@ -1,0 +1,109 @@
+.goods_bg{
+    background: #f2f2f2;
+    img{
+        width:100%;
+    }
+}
+.good_top{
+    position:fixed;
+    height:3.25rem;
+    background:#fff;
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 3.25rem;
+    top:0px;
+    width:100%;
+    font-weight: 900;
+}
+.good_img{
+    margin-top:3.25rem;
+    img{
+        width:100%;
+    }
+}
+.mod-details{
+    width:100%;
+    background:#fff;
+    padding:0 1.25rem;
+    margin-bottom:1.0625rem;
+    h2{
+        font-size:1.25rem;
+        line-height: 2.225rem;
+        font-weight: 900;
+        span{
+            border:1px solid #12c287;
+            border-radius:.75rem;
+            line-height: 1.5rem;
+            font-size:.875rem;
+            padding:0 .25rem;
+            color:#12c287;
+            margin-left:1.25rem;
+        }
+    }
+    >p{
+        font-size: 1rem;
+        line-height: 1.875rem;
+        color:#999;
+        span{
+            margin-right:1rem;
+        }
+    }
+    .good_flex{
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between; 
+       border-bottom:1px solid #c3c3c3;
+       span{
+            display: inline-block;
+            font-size:.875rem;
+            color:#666;
+            line-height: 3rem;
+       }
+       p{
+           flex:1;
+           font-size:.875rem;
+           color:#666;
+           line-height: 3rem;
+           padding-left:1.25rem;
+       }
+    }
+    a:last-of-type{
+        border:none;
+    }
+}
+.good_server{
+    h2{
+        font-size: 1.25rem;
+        font-weight: 900;
+        padding-top:1.55rem;
+    }
+    .good_plan{
+        display: flex;
+        flex-direction: row;
+        a{
+            background: #12c287;
+            color:#fff;
+            // background: #fff;
+            // color:#ccc;
+            text-align: center;
+            flex:1;
+            border-radius:.4375rem;   
+            padding:.4375rem;        
+            p{
+                font-size: 1.25rem;
+                line-height: 2.25rem
+            }
+            span{
+                font-size: .875rem;
+            }
+        }
+        >p{
+            width:2.5rem;
+        }
+    }
+    .plans-clause{
+        li{
+            list-style: none;
+        }
+    }
+}
