@@ -1,0 +1,21 @@
+.NewsBan{
+    padding:1.25rem;
+    background:#fff;
+    margin-bottom:.625rem;
+    img{
+        height:11.625rem;        
+    }
+    .slick-list{
+        border-radius: .1875rem;
+    }
+    .slick-dots{
+        top:12.5rem;
+        left:0rem;
+        li button{
+            background:rgb(254, 167, 139);
+        }
+        li.slick-active button{
+            background:rgb(248, 53, 83);
+        }
+    }
+}

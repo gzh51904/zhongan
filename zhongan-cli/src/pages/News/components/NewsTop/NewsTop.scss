@@ -1,0 +1,25 @@
+.NewsTop{
+    height:2.75rem;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    line-height: 2.75rem;
+    padding:0 .625rem;
+    border-bottom:.04375rem solid #ccc;
+    background:#fff;
+    h1{
+        font-size:1.125rem;
+        flex:1;
+        text-align: center;
+        font-weight: 900;
+    }
+    .MyNews{
+        color:#404040;
+        font-size:1.525rem;
+        font-weight: 600;
+    }
+    .NewsPacket{
+        font-size:1.525rem;
+        color:#f15107;
+    }
+}
