@@ -69,10 +69,7 @@ class MyHome extends React.Component{
                 </ul>
             </div>
             <div className='g_recommend'>
-                <h2  onClick={()=>{
-                    console.log(555)
-                    this.props.history.push('/goods')
-                }}>为你推荐</h2>
+                <h2>为你推荐</h2>
                 <div className='g_ul'>
                    <a href='xxx:;' >
                        <img src="https://open-cdn.zhongan.com/dm-instrument/images/k045uublwbl5ntg4ap41miru1ipmmudahskujrr8.png" alt=""/>

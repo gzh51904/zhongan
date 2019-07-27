@@ -58,7 +58,15 @@ class Home extends Component{
         // this.beforeChange=this.beforeChange.bind(this)
     }
     componentWillMount(){
-        window.location.hash = '/home/myhome'
+        if(window.location.hash.slice(6)==='/'){
+            window.location.hash = '/home/myhome'
+        }
+        else{
+            let zero = this.state.navList.filter(item=>item.path===window.location.hash.slice(6));
+            this.setState({
+                current:zero[0].name
+            })
+        }  
     }
     componentDidUpdate(){
         if(this.state.judge===false){
@@ -201,7 +209,6 @@ class Home extends Component{
 }
 
 let mapStateToProps = (state)=>{
-    // console.log(state,state.props)
     return {
       navscolor:state.navcolor
     }
