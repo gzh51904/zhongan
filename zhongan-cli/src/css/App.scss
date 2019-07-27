@@ -1,0 +1,43 @@
+.App {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .mainTop {
+    height: 2.85rem;
+    background: lightblue;
+    width: 100%;
+  }
+  .mainBody {
+    flex: 1;
+    overflow: auto;
+  }
+  .mainBottom {
+    height: 3.25rem;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    .mainBottomItem {
+      display: flex;
+      flex:1;
+      color: #404040;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      span {
+        img {
+          width: 1.5625rem;
+          height: 1.5625rem;
+          margin-bottom: .1875rem;
+        }
+      }
+      p{
+        font-size:.625rem;
+      }
+    }
+  }
+}
