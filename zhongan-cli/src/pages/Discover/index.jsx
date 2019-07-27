@@ -145,18 +145,18 @@ class Discover extends Component {
                 <div className="Disfuli">
                     <h3>福利专区</h3>
                     <div>
-                        <a href="#">
-                            <img src='https://open-cdn.zhongan.com/dm-instrument/images/ri3sn9juaqb53ghosgevsvjbv72kl59ovlxjccjw.png'/>
+                        <a href="javascript:;">
+                            <img src='https://open-cdn.zhongan.com/dm-instrument/images/ri3sn9juaqb53ghosgevsvjbv72kl59ovlxjccjw.png' alt="qiandaofuli"/>
                         </a>
                     </div>
                     <div>
-                        <a href="#">
-                            <img src='https://open-cdn.zhongan.com/dm-instrument/images/pbk9ij4ja3ra8atqrx7smc0c85feeurlhppmwisa.png'/>
+                        <a href="javascript:;">
+                            <img src='https://open-cdn.zhongan.com/dm-instrument/images/pbk9ij4ja3ra8atqrx7smc0c85feeurlhppmwisa.png' alt="fuli"/>
                         </a>
                     </div>
                     <div>
-                        <a href="#">
-                            <img src='https://open-cdn.zhongan.com/dm-instrument/images/y9orqvoxqbbyfoerll9ve2czeovakvmdn8aw7dzx.png'/>
+                        <a href="javascript:;">
+                            <img src='https://open-cdn.zhongan.com/dm-instrument/images/y9orqvoxqbbyfoerll9ve2czeovakvmdn8aw7dzx.png' alt="hangkong"/>
                         </a>
                     </div>
                 </div>
@@ -164,25 +164,25 @@ class Discover extends Component {
                 <div className="Disjifen">
                     <h3>积分商城</h3>
                     <div>
-                        <a href="#">
+                        <a href="javascript:;">
                             <img src='https://open-cdn.zhongan.com/dm-instrument/images/vtgvkjfpkntciverunx8ifmztyjfbkc6j4mwkavn.png'/>
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="javascript:;">
                             <img src='https://open-cdn.zhongan.com/dm-instrument/images/l6rg8htieprwh3tsonzut9hjqaqs0dcdl1pwaqtr.png'/>
                         </a>
                     </div>   
                     <div>
-                        <a href="#">
+                        <a href="javascript:;">
                             <img src='https://open-cdn.zhongan.com/dm-instrument/images/vypiknp7dp9n3x59uxwhojcl377fmkb2kaovz6kv.png'/>
                         </a>
                     </div> <div>
-                        <a href="#">
+                        <a href="javascript:;">
                             <img src='https://open-cdn.zhongan.com/dm-instrument/images/y1bwzfspbktnqv5td4rgqv25wplkankxlxeskibo.png'/>
                         </a>
                     </div> <div>
-                        <a href="#">
+                        <a href="javascript:;">
                             <img src='https://open-cdn.zhongan.com/dm-instrument/images/b4ajklbrhfbddet7zjssxswbehob4g8d0fkzdeu6.png'/>
                         </a>
                     </div>  
