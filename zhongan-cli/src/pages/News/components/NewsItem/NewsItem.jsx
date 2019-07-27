@@ -26,7 +26,7 @@ class NewsItem extends React.Component {
                 type: ListId
             }
         }).then(res => {
-            console.log(res.data[0].list)
+            // console.log(res.data[0].list)
             this.setState({
                 List: res.data[0].list.sort(b)
             })
