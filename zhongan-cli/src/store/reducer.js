@@ -1,10 +1,11 @@
 // import store from "./index";
-import {CHANGE_BANNER} from './Actions'
+import {CHANGE_BANNER,CHANGE_MAINBOTTOM} from './Actions'
 
 //初始化仓库
 let initState = {
     username:'guo',
     navcolor:'#67D1DE',
+    isShowMainBottom:'flex',
     navs:[{
         title:"U享健康",
         name:'Uhealth',
@@ -52,6 +53,11 @@ let reducer = (state=initState,action)=>{
             return {
                 ...state,
                 navcolor:action.payload
+            }
+        case CHANGE_MAINBOTTOM:
+            return {
+                ...state,
+                isShowMainBottom:action.payload
             }
         default:
         return state;
