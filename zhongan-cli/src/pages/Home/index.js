@@ -58,7 +58,15 @@ class Home extends Component{
         // this.beforeChange=this.beforeChange.bind(this)
     }
     componentWillMount(){
-        window.location.hash = '/home/myhome'
+        if(window.location.hash.slice(6)===''){
+            window.location.hash = '/home/myhome'
+        }
+        else{
+            let zero = this.state.navList.filter(item=>item.path===window.location.hash.slice(6));
+            this.setState({
+                current:zero[0].name
+            })
+        }  
     }
     componentDidUpdate(){
         if(this.state.judge===false){
@@ -179,7 +187,10 @@ class Home extends Component{
             
             </div>
             <div className='g_hot'>
-                <h2>热门搜索</h2>
+                <h2 onClick={()=>{
+                    console.log(555)
+                    this.props.history.push('/goods')
+                }}>热门搜索</h2>
                 <div className='sousuo'>
                     <span>甲状腺结节百万医疗险</span>
                     <span>尊享e生</span>
@@ -198,7 +209,6 @@ class Home extends Component{
 }
 
 let mapStateToProps = (state)=>{
-    // console.log(state,state.props)
     return {
       navscolor:state.navcolor
     }
