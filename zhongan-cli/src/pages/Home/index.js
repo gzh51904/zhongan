@@ -58,7 +58,7 @@ class Home extends Component{
         // this.beforeChange=this.beforeChange.bind(this)
     }
     componentWillMount(){
-        if(window.location.hash.slice(6)==='/'){
+        if(window.location.hash.slice(6)===''){
             window.location.hash = '/home/myhome'
         }
         else{
