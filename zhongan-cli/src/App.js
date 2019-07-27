@@ -68,7 +68,7 @@ class App extends React.Component {
             <Route path={'/mine'} component={Mine} />
             <Route path={'/goods'} component={Goods} />
             <Route path={'/404'} render={() => <div>页面不存在！</div>} />
-            <Redirect from="/" to="/home" />
+            <Redirect from="/" to="/home" exact/>
             <Redirect from="/*" to="/404" />
           </Switch>
         </div>
