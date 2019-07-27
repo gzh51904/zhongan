@@ -1,0 +1,94 @@
+
+.top{
+    width:100%;
+    // height:5rem;
+    background: #fff;
+    position: fixed;
+    top:0px;
+    z-index:2;
+    .search{
+        margin-top:2%;
+        height:2rem;
+        display: flex;
+        flex-direction: row;
+        .ant-input-affix-wrapper{
+            float:left;
+            flex:1;
+            height:90%;
+            margin-right:3%;
+        }
+        a{
+            margin-top:.5rem;
+            width:9%;
+            height:90%;
+            float:left;
+            line-height: 90%;
+            color:#58bc58;
+            i{
+                display: inline-block;
+                width:100%;
+                height:100%;
+                font-size: 1.625rem;
+                color:#fff;
+            }
+        }
+    }
+    .navs{
+        // position: relative;
+        height:3rem;
+        // background: #58bc58;
+        display: flex;
+        overflow: hidden;
+        flex-direction: row;
+        overflow: auto;
+        .navs_box{
+            .ant-menu-horizontal{
+                 background: none!important;
+                 height:100%!important;
+                }
+            }
+           
+       
+    }
+}
+.g_tops{
+    height:4.80rem;
+}
+.g_type{
+    padding:.625rem;
+    background: rgb(247, 250, 250);
+    overflow: hidden;
+    a{
+        margin-top:.75rem;
+        float:left;
+        width:25%;
+        text-align: center;
+        color:#999;
+       
+        img{
+            width:60%;
+        }
+    }
+}
+.g_hot{
+    margin:.75rem 1.75rem;
+    h2{    
+        font-size: 1rem;
+        font-weight: 900;
+        margin-bottom:1rem;
+    }
+    .sousuo{
+        span{
+            float:left;
+            border-radius: .75rem;
+            line-height: 1.5rem;
+            font-size:.875rem;
+            text-align: center;
+            background: rgb(236, 241, 241);
+            padding:.125rem .5rem;
+            margin-bottom:.5rem;
+            margin-right:.5rem;
+            color:#999;
+        }
+    }
+}

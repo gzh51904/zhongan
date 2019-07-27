@@ -1,0 +1,59 @@
+.g_blank{
+    margin-top:1rem;
+  background:#eee;
+}
+.g_twotab{
+    line-height: 2.5rem;
+    height:2.5rem;
+    display: flex;
+    flex-direction: row;
+    background:#fff;
+    span{
+        display: inline-block;
+        margin:.1875rem .4375rem;
+    }
+}
+
+.g_baoxian{
+    margin-top: .625rem;
+    background: #fff;
+    list-style: none;
+    h3{
+        border-bottom:1px solid #ccc;
+        line-height: 3.5rem;
+        height:3.5rem;
+        font-size: 1rem;
+        padding-left:.625rem;
+        font-weight: 900;
+    }
+    li{
+        display: flex;
+        flex-direction: row;
+        margin:1rem 1.25rem;
+        padding-bottom:1.5rem;
+        border-bottom:1px solid #ccc;
+        
+        img{
+            width:5.875rem;
+        }
+        .miaoshu{
+            margin-left:1.25rem;
+            flex:1;
+            h5{
+                font-size:1.10rem;
+                line-height: 2rem;
+            }
+            p{
+                span{
+                    display: inline-block;
+                    font-size:1.25rem;
+                    color:#ff6767;
+                    // font-weight: 800;
+                }
+            }
+        }
+    }
+  li:last-of-type{
+    border:none;
+}
+}
