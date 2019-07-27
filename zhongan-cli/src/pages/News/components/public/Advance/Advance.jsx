@@ -5,6 +5,8 @@ import './Advance.scss';
 import NewsItem from '../../NewsItem/NewsItem';
 import AdvList from '../../../data/FeHelper.json';
 
+import "../../../../../../node_modules/video-react/dist/video-react.css";
+
 let imgList = [{
     imgurl: require('../../../img/Advance/ban1.png'),
     title: '失眠多梦睡不好觉？你可能是得了病！',
@@ -27,21 +29,26 @@ let imgList = [{
     icon: 'iconfont icon-icon3'
 }]
 
-// imgList.map(item=>{
-//     item.imgurl = require('../../../'+item.imgurl);
-//     return item
-// })
+
+
+
 
 class Advance extends React.Component {
+
     render() {
-        // console.log('Adv',this.props)
-        // let List = this.props.location.params.List.list;
-        // let showban = this.props.location.params.showban?true:false;
-        let showban = true;
+        let List = this.props.location.params ? this.props.location.params.List : AdvList;
+        let showban = this.props.location.pathname.slice(6);
+        let flg = (showban) => {
+            switch (showban) {
+                case 'advance': return true
+                default: return false
+            }
+        }
+        // console.log('List', showban, flg(showban),this.props)
         return (
             <div >
-                {showban?<div className='NewsBan'>
-                    <Carousel >
+                {flg(showban) ? <div className='NewsBan'>
+                    <Carousel autoplay>
                         {
                             imgList.map(item => {
                                 return (
@@ -50,7 +57,11 @@ class Advance extends React.Component {
                             })
                         }
                     </Carousel>
-                </div>:null}
+                </div> : null}
+                {/* <div className="NewsVideo"><Player src="http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4" poster="https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg">
+                    <BigPlayButton position="center" />
+                </Player></div> */}
+                {/* <video src="http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4" muted="muted" autoPlay={false} controls loop></video> */}
                 <NewsItem NewsList={AdvList}></NewsItem>
             </div>
         )

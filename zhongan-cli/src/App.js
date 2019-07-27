@@ -55,6 +55,13 @@ class App extends React.Component {
       actBottomItem:name
     })
   }
+  componentWillMount(){
+    let path = this.props.location.pathname.replace(/(\/)(\w+)(\/)(\w+)/,'$1$2');
+    let actname = this.state.navs.filter(item=>item.path === path)[0].name;
+    this.setState({
+      actBottomItem:actname
+    })
+  }
   render() {
     return (
       <div className="App">

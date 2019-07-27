@@ -2,6 +2,9 @@
     "list": [
         {
             "articleId": "1034006",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "title": "好消息！斯里兰卡宣布免签！8月拿起护照说走就走",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/64439820-74fb-438b-9216-f0d617ad3ebe.jpg",
             "origin": "欣欣旅游资讯网",
@@ -19,6 +22,9 @@
         },
         {
             "articleId": "1030022",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/5aa56c86-d155-4d54-9903-b1852482662c.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/0247c6d3-ce17-4f57-a29b-a73fe3d00ab8.PNG",
             "title": "285名“驴友”突遇山洪被困，4人遇难！夏季出行，该怎么学会自救？（实用干货）",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/9819df73-a7c8-4beb-adf4-01728b9b9b01.PNG",
             "origin": "健康小当家",
@@ -45,6 +51,9 @@
         },
         {
             "articleId": "1030008",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/ae75132f-e6d4-4141-843a-6383bf749783.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/62fc42ed-2cbd-435d-96f5-56b540c0e1a5.jpg",
             "title": "10个旅行常见错误，快来数数，你最容易犯的有几个？",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/fdaf12a0-8b01-4428-9eff-d25c703113fc.PNG",
             "origin": "勤劳的搬运工",
@@ -75,6 +84,9 @@
         },
         {
             "articleId": "1032001",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "title": "100年内纽约可能沉入海中？不行向南极喷人造雪！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/9c506822-a1f7-4189-8125-f01b82ab826a.",
             "origin": "齐鲁晚报",
@@ -114,6 +126,9 @@
         },
         {
             "articleId": "1028004",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "title": "男孩16楼扔灭火器，惨遭全楼驱逐！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/99afd132-a5ca-41ff-bbdc-d486943967f6.jpg",
             "origin": "勤劳的搬运工",
@@ -127,6 +142,9 @@
         },
         {
             "articleId": "1028003",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/ae75132f-e6d4-4141-843a-6383bf749783.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/62fc42ed-2cbd-435d-96f5-56b540c0e1a5.jpg",
             "title": "又一起高空坠物!济南一小区三把菜刀从天而降,警方将严查！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/ee8066ca-94eb-4209-9430-608ba00ee91b.PNG",
             "origin": "勤劳的搬运工",
@@ -153,6 +171,9 @@
         },
         {
             "articleId": "1026005",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/5aa56c86-d155-4d54-9903-b1852482662c.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2a2a45b4-c079-4e07-a4ac-9b4cdbd9e231.jpg",
             "title": "写给家长！如何保护“章子欣们”，逃离陌生人的伤害？",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/2f59c684-f68c-40f9-acbf-a7ad4cf768fa.jpg",
             "origin": "勤劳的搬运工",
@@ -179,6 +200,9 @@
         },
         {
             "articleId": "1022018",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/0247c6d3-ce17-4f57-a29b-a73fe3d00ab8.PNG",
             "title": "“北京截瘫者之家”创办人大理意外身亡，因开轮椅车掉进停车场入口处",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/d6a5899a-14a6-47c2-9f88-004d16d3dbf8.jpg",
             "origin": "新京报",
@@ -209,6 +233,9 @@
         },
         {
             "articleId": "1022006",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/ae75132f-e6d4-4141-843a-6383bf749783.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/62fc42ed-2cbd-435d-96f5-56b540c0e1a5.jpg",
             "title": "夏天值得去的15个海岛推荐，一定有一个是你想去的！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/3634d39a-866d-48db-9cf8-21633ded3f2b.jpg",
             "origin": "樱桃妈妈",
@@ -226,6 +253,9 @@
         },
         {
             "articleId": "1020007",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/0247c6d3-ce17-4f57-a29b-a73fe3d00ab8.PNG",
             "title": "全球气象异常不断扩大：法国46度高温，墨西哥却遭遇大冰雹",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/663f7582-6a90-468f-91f5-99abf944de49.jpg",
             "origin": "勤劳的搬运工",
@@ -260,6 +290,9 @@
         },
         {
             "articleId": "1016030",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/5aa56c86-d155-4d54-9903-b1852482662c.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2a2a45b4-c079-4e07-a4ac-9b4cdbd9e231.jpg",
             "title": "辽宁开原市区发生的龙卷风，极大风速达9级！自然灾害前人如此渺小",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/baf4c74c-70bf-48d7-a564-8a89570332b2.jpg",
             "origin": "勤劳的搬运工",
@@ -286,6 +319,9 @@
         },
         {
             "articleId": "1016016",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/ae75132f-e6d4-4141-843a-6383bf749783.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/62fc42ed-2cbd-435d-96f5-56b540c0e1a5.jpg",
             "title": "157人全员罹难，1月1次的航空意外，给每个人敲响警钟！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/7d52d2d8-b5d0-4093-9d9c-cd81500021e8.jpg",
             "origin": "热点观察室",
@@ -299,6 +335,9 @@
         },
         {
             "articleId": "1016011",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "title": "监控密集、速限偏低，山西部分高速公路规矩令人犯晕",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/09d8b2a7-d104-4699-92c9-2e61a678d03f.jpg",
             "origin": "热点观察室",
@@ -329,6 +368,9 @@
         },
         {
             "articleId": "1014010",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "title": "吉祥航空首次换装，新制服浓浓中国风，让人眼前一亮",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/11185902-cd84-4363-99a7-8c5aa5a0bc06.png",
             "origin": "时话时说",

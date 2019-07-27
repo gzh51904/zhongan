@@ -15,6 +15,9 @@ import AdvList from '../../data/FeHelper.json';
 import VideoList from '../../data/FeHelper2.json';
 import CourseList from '../../data/FeHelper3.json';
 import CarList from '../../data/FeHelper4.json';
+import Search from "antd/lib/input/Search";
+
+
 
 class NewsBody extends React.Component {
     constructor() {
@@ -26,49 +29,57 @@ class NewsBody extends React.Component {
                 title: '推荐',
                 component: Advance,
                 List:AdvList,
+                ListId:1,
                 showban:true
             }, {
                 name: 'Video',
                 path: '/video',
                 title: '视频',
                 component: Video,
-                List:VideoList
+                List:VideoList,
+                ListId:3
             }, {
                 name: 'Course',
                 path: '/course',
                 title: '课程',
                 component: Course,
-                List:CourseList
+                List:CourseList,
+                ListId:2
             }, {
                 name: 'Insurance',
                 path: '/insurance',
                 title: '保险',
                 component: Insurance,
-                List:VideoList
+                List:VideoList,
+                ListId:1
             }, {
                 name: 'Health',
                 path: '/health',
                 title: '健康',
                 component: Health,
-                List:CarList
+                List:CarList,
+                ListId:4
             }, {
                 name: 'Car',
                 path: '/car',
                 title: '汽车',
                 component: Car,
-                List:CourseList
+                List:CourseList,
+                ListId:3
             }, {
                 name: 'Travel',
                 path: '/travel',
                 title: '出行',
                 component: Travel,
-                List:CarList
+                List:CarList,
+                ListId:2
             }, {
                 name: 'Finance',
                 path: '/finance',
                 title: '金融',
                 component: Finance,
-                List:AdvList
+                List:AdvList,
+                ListId:1
             }],
             actNav: 'Advance'
         }
@@ -78,13 +89,13 @@ class NewsBody extends React.Component {
         this.setState({ actNav: name });
         let path = this.state.navs.filter(item=>item.name===name)[0].path;
         let List = this.state.navs.filter(item=>item.name===name)[0].List;
-        let showban = this.state.navs.filter(item=>item.name===name)[0].showban;
+        let ListId = this.state.navs.filter(item=>item.name===name)[0].ListId;
         this.props.history.push({
             pathname:'/news'+path,
             params:{
-                List:List,
-                showban:showban
-            }
+                List:List
+            },
+            search:'?ListId='+ListId
         });
     }
     render() {
@@ -93,6 +104,7 @@ class NewsBody extends React.Component {
             <div className='NewsBody'>
                 <div className='NewsNav'>
                     <ul className='NewsNav_ul'>
+                    
                         {
                             this.state.navs.map(item => {
                                 return (
@@ -114,6 +126,7 @@ class NewsBody extends React.Component {
 
                 </div>
                 <div className="NewsRender">
+                
                     <Switch>
                         {
                             this.state.navs.map(item => {
@@ -123,7 +136,7 @@ class NewsBody extends React.Component {
                             })
                         }
                         <Route path={'/news/404'} render={() => <div>页面不存在！</div>} />
-                        <Redirect from="/news/" to="/news" exact/>
+                        <Redirect from="/news/" to="/news/advance" exact/>
                         <Redirect from="/news/*" to="/news/404" />
                     </Switch>
                 </div>

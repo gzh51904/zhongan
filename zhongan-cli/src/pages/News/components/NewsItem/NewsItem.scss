@@ -1,9 +1,56 @@
 .NewsItem {
   padding: 0.625rem;
-  overflow: hidden;
+  // overflow: hidden;
   background: #fff;
-
   border-bottom: 0.02125rem solid #ccc;
+
+  .NewsVideo {
+    width: 90vw;
+    overflow: hidden;
+    height: 75vw;
+    margin-bottom: 0.9375rem;
+    > h1 {
+      font-weight: 900;
+      font-size: 1rem;
+      margin-bottom: 0.3125rem;
+      > div {
+        > button {
+          width: 1.5rem;
+          border-radius: 50%;
+        }
+      }
+      .video-react-big-play-button {
+        width: 1.5rem;
+        border-radius: 50%;
+      }
+    }
+    .guanchashi {
+      color: rgb(161, 161, 161);
+      font-size: 0.725rem;
+      margin-top: 0.9375rem;
+      span {
+        margin-left: 0.425rem;
+        i {
+          font-size: 0.825rem;
+          margin-right: 0.1875rem;
+        }
+      }
+      .icon-miaozhun {
+        color: #fff;
+        background: red;
+        border-radius: 50%;
+      }
+      .zatoutiao {
+        display: inline-block;
+        width: 0.75rem;
+        height: 0.75rem;
+        background: url(../../img/down_icon.png);
+        border-radius: 50%;
+        background-size: contain;
+      }
+    }
+  }
+
   .NewsItemBox {
     margin-bottom: 1.225rem;
     display: flex;
@@ -36,11 +83,24 @@
       color: rgb(161, 161, 161);
       font-size: 0.625rem;
       span {
-        margin-left: 0.625rem;
+        margin-left: 0.425rem;
         i {
           font-size: 0.725rem;
           margin-right: 0.1875rem;
         }
+      }
+      .icon-miaozhun {
+        color: #fff;
+        background: red;
+        border-radius: 50%;
+      }
+      .zatoutiao {
+        display: inline-block;
+        width: 0.75rem;
+        height: 0.75rem;
+        background: url(../../img/down_icon.png);
+        border-radius: 50%;
+        background-size: contain;
       }
     }
   }
@@ -55,13 +115,18 @@
       span:first-of-type {
         color: rgb(247, 76, 71);
         font-weight: 900;
+        font-size: 0.75rem;
         i {
           margin-right: 0.3125rem;
+          font-size: 0.9rem;
         }
       }
       span:last-of-type {
         float: right;
         color: rgb(207, 207, 207);
+        // @media screen and (min-width:1024px){
+        //   font-size:2rem;
+        // }
         font-size: 0.75rem;
         i {
           margin-right: 0.1875rem;
@@ -82,10 +147,10 @@
       position: absolute;
       right: 0px;
       top: -7px;
-      border-top:5px solid transparent;
-      border-left:18px solid transparent;
-      border-bottom:5px solid rgb(247, 247, 247);
-      border-right:18px solid rgb(247, 247, 247);
+      border-top: 5px solid transparent;
+      border-left: 18px solid transparent;
+      border-bottom: 5px solid rgb(247, 247, 247);
+      border-right: 18px solid rgb(247, 247, 247);
     }
   }
 }

@@ -5,6 +5,9 @@
             "title": "喝咖啡的正确姿势，我猜你还不知道！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/37760e47-c241-44a4-b517-05d6d22b73f2.PNG",
             "origin": "广州日报",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/5aa56c86-d155-4d54-9903-b1852482662c.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2a2a45b4-c079-4e07-a4ac-9b4cdbd9e231.jpg",
             "labels": [
                 {
                     "labelId": 436009,
@@ -31,6 +34,9 @@
             "title": "脾气不好的妈妈，在教育孩子上要注意这几件事......",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/0247c6d3-ce17-4f57-a29b-a73fe3d00ab8.PNG",
             "origin": "樱桃妈妈",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "labels": [
                 {
                     "labelId": 2726,
@@ -57,7 +63,15 @@
             "title": "“葛优瘫”摊上了大事！小心肺栓塞找上你",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/30ad10fd-58ad-4c7b-bd66-14b3a780392d.jpg",
             "origin": "健康报",
-            "labels": [],
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/ae75132f-e6d4-4141-843a-6383bf749783.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/62fc42ed-2cbd-435d-96f5-56b540c0e1a5.jpg",
+            "labels": [
+                {
+                    "labelId": 2507,
+                    "labelName": "糖尿病饮食"
+                }
+            ],
             "qaResult": null
         },
         {
@@ -65,6 +79,9 @@
             "title": "免费公开课 | 失眠、多梦、打呼...你可能是得了病！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/1b16812b-3a25-4e5c-b12b-4a46e92e0c3d.png",
             "origin": "众安头条",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "labels": [
                 {
                     "labelId": 678001,
@@ -91,6 +108,9 @@
             "title": "1岁胃部破裂，生命垂危，原来是给孩子吃了这个......",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/bfdd9ec3-a190-4c5d-87dd-419167fc1d50.jpg",
             "origin": "健康时报",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/5aa56c86-d155-4d54-9903-b1852482662c.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2a2a45b4-c079-4e07-a4ac-9b4cdbd9e231.jpg",
             "labels": [
                 {
                     "labelId": 2947,
@@ -104,6 +124,9 @@
             "title": "妈妈一巴掌，8岁女儿没了！教育孩子不能用打，会出人命！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/7f93fcac-aaef-47a6-8189-9dfee4313e49.jpg",
             "origin": "柬华日报",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/ae75132f-e6d4-4141-843a-6383bf749783.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/62fc42ed-2cbd-435d-96f5-56b540c0e1a5.jpg",
             "labels": [
                 {
                     "labelId": 2947,
@@ -130,6 +153,9 @@
             "title": "用眼过度，眼睛干涩怎么办？这些护眼小秘诀你一定要知道！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/352e16d6-39be-4dcb-accd-364369a2e15d.PNG",
             "origin": "小薇说健康",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "labels": [
                 {
                     "labelId": 2802,
@@ -156,6 +182,9 @@
             "title": "午睡的正确打开方式：教你怎么睡得高效！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/0fda0a78-a6e7-4804-9c24-112923029a87.jpg",
             "origin": "中国新闻网",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/ae75132f-e6d4-4141-843a-6383bf749783.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/62fc42ed-2cbd-435d-96f5-56b540c0e1a5.jpg",
             "labels": [
                 {
                     "labelId": 1274,
@@ -182,6 +211,9 @@
             "title": "热热热热热热！夏天要吃点苦？（快进来凉快会儿）",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/8e1e5a8a-a030-4644-95c2-b0cb871bbd9e.PNG",
             "origin": "健康小当家",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/5aa56c86-d155-4d54-9903-b1852482662c.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2a2a45b4-c079-4e07-a4ac-9b4cdbd9e231.jpg",
             "labels": [
                 {
                     "labelId": 676002,
@@ -221,6 +253,9 @@
             "title": "年轻人饮食健康又经常锻炼不会得癌?现实却打脸了......",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/7cb7408d-6a9d-4db6-94c2-d92c97b76a69.jpg",
             "origin": "小薇说健康",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "labels": [
                 {
                     "labelId": 437,
@@ -243,18 +278,13 @@
             "qaResult": null
         },
         {
-            "articleId": "1032019",
-            "title": "任达华被捅伤进行自救！他这个动作被点赞：遇紧急外伤该如何自救？",
-            "coverImage": "",
-            "origin": "小薇说健康",
-            "labels": [],
-            "qaResult": null
-        },
-        {
             "articleId": "1032018",
             "title": "惊心动魄！《北京中年抗击晚期结肠癌手记》，每个人都该收藏！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/0d84b6d1-4b13-476f-873b-6f90c5487f79.jpg",
             "origin": "众安头条",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/ae75132f-e6d4-4141-843a-6383bf749783.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/62fc42ed-2cbd-435d-96f5-56b540c0e1a5.jpg",
             "labels": [
                 {
                     "labelId": 437,
@@ -281,6 +311,9 @@
             "title": "糖尿病患者怎么吃？这样既可以吃得饱，餐后血糖也不会高！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/973528e3-92a6-4b57-80ac-beb6761d7a05.PNG",
             "origin": "樱桃妈妈",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4",
+            "poster":"https://open-cdn.zhongan.com/dm/assembler/6a84eac653401dc265337a6c4ed0aff3.jpg",
             "labels": [
                 {
                     "labelId": 2507,
@@ -294,7 +327,12 @@
             "title": "运动健身，什么时候都不晚！这样运动更长寿",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/2179d89a-d2a7-4da7-9fd7-16dc54579ba5.jpg",
             "origin": "健康报",
-            "labels": [],
+            "labels": [
+                {
+                    "labelId": 2507,
+                    "labelName": "糖尿病饮食"
+                }
+            ],
             "qaResult": null
         },
         {
@@ -302,6 +340,9 @@
             "title": "每天待在空调房的人注意了：这些“痛”会很快找上你了！",
             "coverImage": "http://oss-cn-hzfinance.aliyuncs.com/open-prd/6f50353a-830b-4716-8218-36d76c928364.jpg",
             "origin": "生命时报",
+            "video":true,
+            "videoUrl":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/5aa56c86-d155-4d54-9903-b1852482662c.mp4",
+            "poster":"http://oss-cn-hzfinance.aliyuncs.com/open-prd/2a2a45b4-c079-4e07-a4ac-9b4cdbd9e231.jpg",
             "labels": [
                 {
                     "labelId": 80006,
