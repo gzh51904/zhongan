@@ -4,13 +4,16 @@ import axios from 'axios'
 import { connect } from 'react-redux';
 import { change_login_status } from '../../store/Actions'
 
+import {Route,Switch} from 'react-router-dom'
+import touxiang from './touxiang/index.js'
+
 //http://v.juhe.cn/sms/send?mobile=手机号码&tpl_id=短信模板ID&tpl_value=%23code%23%3D654654&key=
 class Mine extends Component {
     constructor() {
         super();
 
         this.state = {
-            animation:'',
+            animation: '',
             showlog: false,
             showlogbox: true,
             currentid: 1,
@@ -37,7 +40,15 @@ class Mine extends Component {
         this.logout = this.logout.bind(this)
         this.mimadenglu = this.mimadenglu.bind(this)
         this.changepassword = this.changepassword.bind(this)
+        this.changetouxiang = this.changetouxiang.bind(this)
 
+    }
+    
+    changetouxiang(){
+        let {history} = this.props;
+        history.push({
+            pathname : '/mine/touxiang'
+        })
     }
 
     changekeyword() {
@@ -103,14 +114,14 @@ class Mine extends Component {
                 params: {
                     phoneNum: phone
                 }
-            }).then(({data})=>{
-                if(data.data===this.state.code){
+            }).then(({ data }) => {
+                if (data.data === this.state.code) {
                     this.setState({
-                        yanzhengma : true
+                        yanzhengma: true
                     })
                 }
             })
-        }else{
+        } else {
             alert('请输入正确的手机号')
         }
     }
@@ -152,7 +163,7 @@ class Mine extends Component {
             <div className='My_home'>
                 <div className="flex home_head">
                     <div className="flex home_head_content">
-                        <div className="home_headImg">
+                        <div onClick={this.changetouxiang.bind(this)} className="home_headImg">
                             <img alt="" src="https://dm-m.zacdn.cn/my/assets/images/common/default.png" />
                         </div>
                         {
@@ -258,34 +269,41 @@ class Mine extends Component {
                         </div>
                     </div>
                 </div>
+            
                 <p className="phone">客服电话<span>1010-9955</span></p>
+                
             </div>
             {
                 this.state.showlog ? (
-                    <div className="My_logreg" style={{animation:this.state.animation}}>
+                    <div className="My_logreg" style={{ animation: this.state.animation }}>
                         <div className="logregbox">
                             <div className="box1">
                                 <div className="topbox">
                                     <ul>
                                         <li onClick={() => {
                                             this.setState({
+                                                keyword: '',
+                                                code: '',
                                                 showlogbox: false,
                                                 currentid: 2,
                                                 yanzhengmadenglu: 'none',
-                                                mimadenglu: 'block'
+                                                mimadenglu: 'block',
                                             })
                                         }} className={this.state.currentid === 2 ? 'on' : null} >密码登录</li>
                                         <li onClick={() => {
                                             this.setState({
+                                                keyword2:'',
+                                                password:'',
                                                 showlogbox: true,
                                                 currentid: 1,
                                                 yanzhengmadenglu: 'block',
-                                                mimadenglu: 'none'
+                                                mimadenglu: 'none',
                                             })
                                         }} className={this.state.currentid === 1 ? 'on' : null}>注册/登录</li>
                                     </ul>
                                 </div>
                             </div>
+                            
                             <div className="box2">
 
                                 <div className="item" style={{ display: this.state.yanzhengmadenglu }}>
@@ -324,6 +342,11 @@ class Mine extends Component {
                     </div>
                 ) : null
             }
+
+            <Switch>
+                <Route path='/mine/touxiang' component={touxiang}></Route>
+            </Switch>
+
         </>
     }
 }

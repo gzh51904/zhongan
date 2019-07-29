@@ -9,7 +9,7 @@ import store from './store'
 
 import axios from 'axios'
 // 配置基础路径
-axios.defaults.baseURL = 'http://localhost:2019';
+axios.defaults.baseURL = 'http://47.94.157.240:2017';
 
 
 
