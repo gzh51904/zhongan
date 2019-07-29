@@ -31,16 +31,29 @@ class MyNews extends React.Component {
                 path: '/myvideo',
                 name: 'MyVideo',
                 component:Video
-            }]
+            }],
+            actname:'MyComment'
         }
         this.gotoNews = this.gotoNews.bind(this);
         this.goto = this.goto.bind(this);
+    }
+    componentWillMount(){
+        let path = this.props.location.pathname.replace(/(\/)(\w+)(\/)(\w+)(\/)(\w+)/, '$5$6');
+        console.log('ass',path,this.props.location.pathname);
+        let name = this.state.navs.filter(item=>item.path===path)[0].name;
+        this.setState({
+            actname:name
+        })
     }
     gotoNews() {
         this.props.history.push('/news')
     }
     goto(path){
         this.props.history.push({pathname:'/news/mynews'+path})
+        let name = this.state.navs.filter(item=>item.path===path)[0].name;
+        this.setState({
+            actname:name
+        })
     }
     render() {
         let ParentPath = this.props.match.path;
@@ -54,7 +67,7 @@ class MyNews extends React.Component {
                         {
                             this.state.navs.map(item => {
                                 return (
-                                    <li key={item.name} onClick={()=>{this.goto(item.path)}}>{item.title}</li>
+                                    <li className={this.state.actname===item.name?'actMynewsLi':''} key={item.name} onClick={()=>{this.goto(item.path)}}>{item.title}</li>
                                 )
                             })
                         }

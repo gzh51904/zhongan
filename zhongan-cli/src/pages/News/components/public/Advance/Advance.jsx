@@ -62,7 +62,7 @@ class Advance extends React.Component {
                     <BigPlayButton position="center" />
                 </Player></div> */}
                 {/* <video src="http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4" muted="muted" autoPlay={false} controls loop></video> */}
-                <NewsItem NewsList={AdvList}></NewsItem>
+                <NewsItem NewsList={AdvList} props={this.props}></NewsItem>
             </div>
         )
     }

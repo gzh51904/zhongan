@@ -8,6 +8,7 @@ class NewsItem extends React.Component {
         this.state = {
             List: []
         }
+        this.goto = this.goto.bind(this);
     }
     componentWillMount() {
         //按点赞数排序
@@ -36,10 +37,21 @@ class NewsItem extends React.Component {
             }
         })
     }
+    //取消异步操作
     componentWillUnmount() {
         this.setState = (state, callback) => {
             return
         }
+    }
+    goto(id){
+        // console.log(this.props);
+        // console.log(window.location.hash.slice(-1),id);
+        let ListId = window.location.hash.slice(-1);
+        this.props.props.history.push({
+            pathname:'/news/newsdetail',
+            params:'',
+            search: '?ListId=' + ListId + '&articleId=' + id
+        })
     }
     render() {
         let List = this.state.List;
@@ -47,7 +59,7 @@ class NewsItem extends React.Component {
             {
                 List.map(item => {
                     return (
-                        <li className='NewsItem' key={item.articleId}>
+                        <li className='NewsItem' key={item.articleId} onClick={()=>{this.goto(item.articleId)}}>
                             {item.video ? <div className="NewsVideo">
                                 <h1>【{item.labels[0].labelName}】{item.title}</h1>
                                 <Player src={item.videoUrl} poster={item.poster}>
