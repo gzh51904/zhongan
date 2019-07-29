@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import MyNews from './components/MyNews/MyNews';
 import ZaNews from "./components/ZaNews";
+import NewsDetail from "./components/NewsDetail/NewsDetail";
 import {withRouter,Route,Switch} from "react-router-dom";
 import "./iconfont/iconfont.css";
 import './News.scss';
@@ -12,6 +13,7 @@ class Order extends Component{
         >
             <Switch>
                 <Route path={'/news/mynews'} component={MyNews} />
+                <Route path={'/news/newsdetail'} component={NewsDetail} />
                 <Route path={'/news'} component={ZaNews} />
             </Switch>
         </div>

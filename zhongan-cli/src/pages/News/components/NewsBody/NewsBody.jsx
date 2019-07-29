@@ -85,6 +85,13 @@ class NewsBody extends React.Component {
             this.setState({
                 actNav: 'Advance'
             })
+            this.props.history.push({
+                pathname: '/news/advance' ,
+                params: {
+                    List: 1
+                },
+                search: '?ListId=1'
+            });
         } else if (path === '/mynews' || path === '/404') {
             return false
         } else {
@@ -143,7 +150,7 @@ class NewsBody extends React.Component {
                             })
                         }
                         <Route path={'/news/404'} render={() => <div>页面不存在！</div>} />
-                        <Redirect from="/news/" to="/news/advance" exact />
+                        {/* <Redirect from="/news/" to="/news/advance" exact /> */}
                         <Redirect from="/news/*" to="/news/404" />
                     </Switch>
                 </div>

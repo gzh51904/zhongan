@@ -1,0 +1,153 @@
+.NewsDetailBox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .NewsDetailTop {
+    width: 100%;
+    background: #fff;
+    position: relative;
+    border-bottom: #ccc solid 0.03125rem;
+    .NewsDetailImg {
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      height: 2.5rem;
+      width: 70vw;
+      margin: 0 auto;
+      line-height: 2.5rem;
+      //省略号
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+
+      i:first-of-type {
+        position: absolute;
+        left: 0.25rem;
+        top: 0;
+        color: rgb(28, 180, 132);
+        font-size: 1.125rem;
+      }
+      i:last-of-type {
+        position: absolute;
+        right: 0.45rem;
+        top: 0;
+        color: rgb(28, 180, 132);
+        font-size: 1.125rem;
+      }
+    }
+  }
+  .NewsDetailBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    overflow: auto;
+    
+    .guanchashi {
+      color: rgb(161, 161, 161);
+      font-size: 0.725rem;
+      margin-top: 0.9375rem;
+      margin-bottom: 1.25rem;
+      span {
+        margin-left: 0.425rem;
+        i {
+          font-size: 0.825rem;
+          margin-right: 0.1875rem;
+        }
+      }
+      .icon-miaozhun {
+        color: #fff;
+        background: red;
+        border-radius: 50%;
+      }
+      .zatoutiao {
+        display: inline-block;
+        width: 0.75rem;
+        height: 0.75rem;
+        background: url(../../img/down_icon.png);
+        border-radius: 50%;
+        background-size: contain;
+      }
+    }
+    .detailTip {
+      padding: 0.625rem;
+      color: #999;
+      font-size: 0.75rem;
+      margin-bottom: 1.25rem;
+      span {
+        margin-right: 0.5rem;
+      }
+    }
+    .detailLabel {
+      padding: 0.625rem;
+      margin-bottom: 1.25rem;
+      span {
+        border-radius: 0.35rem;
+        padding: 0.25rem;
+        color: #333;
+        background: rgb(247, 247, 247);
+        margin-right: 1.3125rem;
+      }
+    }
+    h2 {
+      padding: 0.625rem;
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+    .MetionVideo {
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 2rem;
+        height: 2rem;
+      }
+      img {
+        width: 8.125rem;
+        height: 6.25rem;
+        border-radius: 0.3125rem;
+      }
+      > ul {
+        overflow: auto;
+        display: flex;
+        padding: 0.625rem;
+        > li {
+          flex: 1;
+          margin-right: 0.9375rem;
+          > p {
+            display: -webkit-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-line-clamp:2;
+            -webkit-box-orient: vertical;
+          }
+        }
+      }
+    }
+    .detailComment{
+        text-align: center;
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 2rem;
+            height: 2rem;
+          }
+          img{
+            width: 8.125rem;
+            height: 8.25rem;
+          }
+    }
+  }
+}
