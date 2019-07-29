@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-import { Breadcrumb, Icon, Table,message, Button,Divider, Spin,Alert,BackTop,notification} from 'antd';
+import { Breadcrumb, Icon, Table,message, Button,Divider, Spin,Alert,BackTop,notification,Modal} from 'antd';
 import axios from 'axios';
 
 import './Goodsinfo.scss'
 
+const { confirm } = Modal;
 
 class Goodsinfo extends Component {
     constructor() {
@@ -91,16 +92,35 @@ class Goodsinfo extends Component {
     }
    
     removeItem(item){
-        // console.log("item",item)
-        axios.delete('http://47.94.157.240:2017/zhongangoods',{params:{goodsCode:item.goodsCode}}
-            ).then( (response) =>{
-                // console.log("删除成功")
-                message.success('商品删除成功！', 1.5)
-            this.fetch();
-            }) 
-            .catch(function (error) {
-                console.log(error)
+        confirm({
+            title: '你真的要删除该商品?',
+            content: '删除后不可恢复！',
+            onOk:()=> {
+               // console.log("item",item)
+                axios.delete('http://47.94.157.240:2017/zhongangoods',{params:{goodsCode:item.goodsCode}}
+                ).then( (response) =>{
+                    // console.log("删除成功")
+                    message.success('商品删除成功！', 0.5)
+                    this.fetch();
+                }) 
+                .catch(function (error) {
+                    console.log(error)
             }) ;
+                },
+                onCancel:()=>{
+                    message.success('取消删除！', 0.5)
+                },
+          });
+        // // console.log("item",item)
+        // axios.delete('http://47.94.157.240:2017/zhongangoods',{params:{goodsCode:item.goodsCode}}
+        //     ).then( (response) =>{
+        //         // console.log("删除成功")
+        //         message.success('商品删除成功！', 1.5)
+        //     this.fetch();
+        //     }) 
+        //     .catch(function (error) {
+        //         console.log(error)
+        //     }) ;
             
     }
 
