@@ -36,7 +36,7 @@ let imgList = [{
 class Advance extends React.Component {
 
     render() {
-        let List = this.props.location.params ? this.props.location.params.List : AdvList;
+        // let List = this.props.location.params ? this.props.location.params.List : AdvList;
         let showban = this.props.location.pathname.slice(6);
         let flg = (showban) => {
             switch (showban) {
