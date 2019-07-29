@@ -18,7 +18,7 @@ react、react-router、react-redux、redux、antd-UI、video-react插件、axios
 
 ## 项目总体框架
 
-![](.\zhongan-cli\cli.png)
+![](https://github.com/gzh51904/zhongan/blob/dev/zhongan-cli/cli.png)
 
 ## 团队分工
 
