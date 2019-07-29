@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
-import NewsTop from './components/NewsTop/newsTop';
-import NewsBody from './components/NewsBody/NewsBody';
+import MyNews from './components/MyNews/MyNews';
+import ZaNews from "./components/ZaNews";
+import {withRouter,Route,Switch} from "react-router-dom";
 import "./iconfont/iconfont.css";
 import './News.scss';
 
@@ -9,10 +10,12 @@ class Order extends Component{
         return <div 
             className='News'            
         >
-            <NewsTop/>
-            <NewsBody/>
+            <Switch>
+                <Route path={'/news/mynews'} component={MyNews} />
+                <Route path={'/news'} component={ZaNews} />
+            </Switch>
         </div>
     }
 }
-
+Order = withRouter(Order);
 export default Order;
