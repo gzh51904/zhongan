@@ -59,17 +59,17 @@ class App extends React.Component {
     })
   }
   componentWillMount() {
-    let path = this.props.location.pathname.replace(/(\/)(\w+)(\/)(\w+)/, '$1$2');
-    // console.log('222', path);
-    if (path == '/') {
-      return false;
-    } else {
-      let actname = this.state.navs.filter(item => item.path === path)[0].name;
-      this.setState({
-        actBottomItem: actname
-      })
-    }
-
+    //刷新高亮
+    let name;
+    this.state.navs.forEach(item=>{
+      if (this.props.location.pathname.indexOf(item.path) !== -1){
+        name = item.name
+        return
+      }
+    })
+    this.setState({
+      actBottomItem: name
+    })
   }
   render() {
     return (

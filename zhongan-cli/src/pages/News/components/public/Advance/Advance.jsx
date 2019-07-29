@@ -36,7 +36,7 @@ let imgList = [{
 class Advance extends React.Component {
 
     render() {
-        let List = this.props.location.params ? this.props.location.params.List : AdvList;
+        // let List = this.props.location.params ? this.props.location.params.List : AdvList;
         let showban = this.props.location.pathname.slice(6);
         let flg = (showban) => {
             switch (showban) {
@@ -62,7 +62,7 @@ class Advance extends React.Component {
                     <BigPlayButton position="center" />
                 </Player></div> */}
                 {/* <video src="http://oss-cn-hzfinance.aliyuncs.com/open-prd/2ffe6c8d-a5c2-4857-a059-c8348025e568.mp4" muted="muted" autoPlay={false} controls loop></video> */}
-                <NewsItem NewsList={AdvList}></NewsItem>
+                <NewsItem NewsList={AdvList} props={this.props}></NewsItem>
             </div>
         )
     }

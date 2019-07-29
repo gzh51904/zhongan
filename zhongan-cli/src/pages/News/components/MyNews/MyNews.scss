@@ -1,0 +1,62 @@
+.MyNewsBox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .MyNewsTop {
+    h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      position: relative;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      border-bottom: #ccc solid 0.03125rem;
+      background: #fff;
+      i {
+        position: absolute;
+        left: 0.25rem;
+        top: 0;
+        color: rgb(28, 180, 132);
+        font-size: 1.125rem;
+      }
+    }
+  }
+  .MyNewsBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    ul {
+      display: flex;
+      margin-bottom: 0.625rem;
+      background: #fff;
+      li {
+        flex: 1;
+        height: 2.1875rem;
+        line-height: 2.1875rem;
+        text-align: center;
+        font-weight: 500;
+        color: #333;
+        font-size: 0.75rem;
+      }
+      .actMynewsLi{
+        border-bottom:rgb(18, 194, 135) solid .125rem;
+      }
+    }
+    .MyNewsRender {
+      flex: 1;
+      background: #fff;
+      overflow: auto;
+      .mynewsImgBox {
+        width: 100%;
+        height: 100vw;
+        text-align: center;
+        line-height: 100vw;
+
+        img {
+          width: 50%;
+          height: 50%;
+        }
+      }
+    }
+  }
+}
