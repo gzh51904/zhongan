@@ -22,6 +22,16 @@
         .home_headLog {
           color: #fff;
           padding-left: 0.75rem;
+          .username{
+            display:inline-block;
+            margin-top:12px;
+            font-size:20px;
+          }
+          button{
+            margin-left:10px;
+            font-size:16px;
+            background-color:rgb(6, 189, 146);
+          }
           .dengluzhuce {
             line-height: 2.125rem;
             strong {

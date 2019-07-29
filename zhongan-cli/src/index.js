@@ -7,6 +7,12 @@ import {HashRouter} from "react-router-dom";
 import {Provider} from 'react-redux';
 import store from './store'
 
+import axios from 'axios'
+// 配置基础路径
+axios.defaults.baseURL = 'http://localhost:2019';
+
+
+
 ReactDOM.render(
     <Provider store={store}>
        <HashRouter>
