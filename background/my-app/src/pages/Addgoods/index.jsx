@@ -47,7 +47,7 @@ class RegistrationForm extends Component {
     constructor() {
         super();
         this.state = {
-            from:{
+            form:{
                 categoryOne: "9",
                 categoryOneName: "",
                 categoryTwo: "23",

@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
-import { message,notification , Checkbox,Tooltip,Card,Form, Layout, Menu, Breadcrumb, Icon, Input, Col, Row, Select,BackTop , InputNumber, DatePicker, AutoComplete, Cascader, Upload, Button } from 'antd';
+import { message, Tooltip,Card,Form, Layout, Menu,Alert,Select, Breadcrumb, Icon, Input, Col, Row,BackTop , InputNumber, DatePicker, AutoComplete, Cascader, Upload, Button } from 'antd';
 
-const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
-const { Search } = Input;
 const InputGroup = Input.Group;
 const { TextArea } = Input;
 const { Option } = Select;
-const AutoCompleteOption = AutoComplete.Option;
 const { Dragger } = Upload;
-
 
 // 上传图片
 const props = {
@@ -34,20 +29,12 @@ const props = {
     },
 };  
 
-// 通知提醒框
-const Modifygoodssuccess = type => {
-    notification[type]({
-      message: '修改商品成功',
-      description:
-        '你上传的商品已成功添加到数据库，你可以选择继续添加商品或者进入商品信息界面查看'
-    });
-};
 
 class RegistrationForm extends Component {
     constructor() {
         super();
         this.state = {
-            from:{
+            form:{
                 categoryOne: "9",
                 categoryOneName: "",
                 categoryTwo: "23",
@@ -65,102 +52,99 @@ class RegistrationForm extends Component {
                 title: "",
                 unit: "起",
                 url: "https://digital.zhongan.com/h5/zauav/uavIndex.htm",
-                goodsCode: "85532001"
+                goodsCode: ""
             },
-            showCart:""
+            showCart:"",
         }
     }
     componentWillMount(){
-      let dataid = (JSON.parse(window.localStorage.getItem("param")));
+      
+      // let dataid = (JSON.parse(window.localStorage.getItem("param")));
+      let dataid = window.localStorage.getItem("param")
       console.log("dataid",dataid)
       // axios.put('http://47.94.157.240:2017/zhongangoods',{})
+      if(dataid===null){
+        setTimeout(()=>{
 
-      axios.get('http://47.94.157.240:2017/zhongangoods',{params:{goodsCode:dataid}}) 
-        .then( ({data}) =>{
-          console.log("data",data)
-          // console.log("img",data[0].imageUrl)
-          this.setState({
-            form : data,
-            showCart: data[0].imageUrl
-          })
-          console.log("form",this.state.form) 
-          // this.props.form.resetFields();
-          // console.log("this.state.showCart",this.state.showCart) 
-          setTimeout(()=>{
-            const formData = {
-              'title':data[0].title,
-              'categoryOneName':data[0].categoryOneName,
-              // 'imageUrl':data[0].imageUrl, // 图片渲染错地方了，会报错Warning: You cannot set a form field before rendering a field associated with the value.
-              'price':data[0].price,
-              'summary':data[0].summary,
-              'categoryTwoName':data[0].categoryTwoName
-            }
-            this.props.form.setFieldsValue(formData)
-            // this.props.form.setFieldsValue({
-            //     'title':data[0].title,
-            //     'categoryOneName':data[0].categoryOneName,
-            //     'imageUrl':data[0].imageUrl,
-            //     'price':data[0].price,
-            //     'summary':data[0].summary,
-            //     'categoryTwoName':data[0].categoryTwoName
-            // })
-            // this.props.form.setFieldsValue(this.state.form);
-          },0)
-          // console.log("this.props.form",this.props.form)
+          this.props.history.push('/goodsinfo')
+
+        },3000)
+
+      }else{
+        axios.get('http://47.94.157.240:2017/zhongangoods',{params:{goodsCode:dataid}}) 
+          .then( ({data}) =>{
+            // console.log("data",data)
+            // console.log("img",data[0].imageUrl)
+            this.setState({
+              form : data,
+              showCart: data[0].imageUrl,
+            })
+            console.log("form",this.state.form) 
+            // this.props.form.resetFields();
+            // console.log("this.state.showCart",this.state.showCart) 
+            setTimeout(()=>{
+              const formData = {
+                title:data[0].title,
+                categoryOneName:data[0].categoryOneName,
+                // imageUrl:data[0].imageUrl, // 图片渲染错地方了，会报错Warning: You cannot set a form field before rendering a field associated with the value.
+                price:data[0].price,
+                summary:data[0].summary,
+                categoryTwoName:data[0].categoryTwoName,
+              }
+              this.props.form.setFieldsValue(formData)
+            },0)
+            // console.log("this.props.form",this.props.form)
+          }) 
+          .catch(function (error) {
+          console.log(error);
         }) 
-        .catch(function (error) {
-        console.log(error);
-      }) 
+      }
       
       }
     handleSubmit = e => {//提交函数，在此函数中你可以通过getFieldsValue方法拿到表单数据
         e.preventDefault();
-        console.log(666)
+        // console.log(666)
         this.props.form.validateFieldsAndScroll((err, values) => {
             // console.log("this.props.form",this.props.form)
-          if (!err) {
+            
+            if (!err) {
             // console.log('Received values of form: ', values);
-
             // 设置imageUrl成为values的属性并赋值
-            let { imageUrl,goodsCode } = this.state
+            let { imageUrl,goodsCode } = this.state.form;
             values.imageUrl = JSON.stringify(imageUrl);
             values.goodsCode = JSON.stringify(goodsCode);
-            console.log('values', values);
-
-            values.imageUrl =  'http://47.94.157.240:2017/' + values.pictureData[0].response.path
-            values.goodsCode = Date.now().toString() // 将Date.now()转为字符串
-            // http://47.94.157.240:2019/uploads\chunqiu-1564310841519.jpg
-            let info = values;
-            console.log("info",info)  
+            // console.log("values",values)
             
             // 先删后插入修改后的
-            // axios.all([
-            //   axios.delete('http://47.94.157.240:2017/zhongangoods',{params:{goodsCode:item.goodsCode}}),
-            //   axios.post('http://47.94.157.240:2017/zhongangoods',{params:{goodsCode:this.state.form.goodsCode}})
-            // ])
-            // .then( (response) =>{
-            //     // console.log("删除成功")
-            //     message.success('商品更新成功！', 1.5)
-            // this.fetch();
-            // }) 
-            // .catch(function (error) {
-            //     console.log(error)
-            // }) ;
-            // 先删后插入修改后的
-            axios.post('http://47.94.157.240:2017/zhongangoods/q',{...info})
-            .then( (response) =>{
-                console.log("删除成功")
-                message.success('商品更新成功！', 1.5)
-            this.fetch();
-            }) 
-            .catch(function (error) {
-                console.log(error)
-            }) ;
-          }
-      });
+            let info = values;
+            if(values.pictureData===undefined){
+              values.imageUrl=this.state.form.imageUrl;
+              message.success('请重新上传图片', 1.5)
+            }else{
+              // values.goodsCode = (JSON.parse(window.localStorage.getItem("param")))
+              values.goodsCode = window.localStorage.getItem("param")
+              values.imageUrl =  'http://47.94.157.240:2017/' + values.pictureData[0].response.path;
+              // http://47.94.157.240:2019/uploads\chunqiu-1564310841519.jpg
+              axios.post('http://47.94.157.240:2017/zhongangoods/q',{...info})
+              .then( (response) =>{
+                  console.log("删除成功")
+                  message.success('商品修改成功！', 1.5)
+                  console.log("values",values)
+                  // this.fetch();
+                  // 重置表单输入为空
+                  this.props.form.resetFields();
+                  window.localStorage.removeItem('param')
+                  this.state.showCart=''
+                }) 
+                .catch(function (error) {
+                  console.log(error)
+                }) ;
+              }
+            }
+          });
     };
     normFile = e => {
-        // console.log('Upload event:', e);
+        console.log('Upload event:', e);
         if (Array.isArray(e)) {
           return e;
         }
@@ -173,6 +157,7 @@ class RegistrationForm extends Component {
         // console.log("data",JSON.parse(window.localStorage.getItem("param")))
 
         return (
+          
             <div className="bigBox">
                 <Breadcrumb style={{ margin: '16px 0' }}>
                 <Breadcrumb.Item>商品管理</Breadcrumb.Item>
@@ -190,7 +175,7 @@ class RegistrationForm extends Component {
                         {getFieldDecorator('categoryOneName', {
                             rules: [{ required: true, message: '请输入', whitespace: true }],
                           })(
-                                <Select style={{ width: '30%' }} initialValue=""  placeholder="请选择">
+                                <Select style={{ width: '30%' }} initialValue="" placeholder="请选择">
                                     <Option value="旅行">旅行</Option>
                                     <Option value="亲子">亲子</Option>
                                     <Option value="家财">家财</Option>
@@ -199,7 +184,7 @@ class RegistrationForm extends Component {
                                 </Select>)}
                             </InputGroup>
                         </Form.Item>
-                        <Form.Item label="图片" className="pictureData" style={{ width: 300 }}>
+                        <Form.Item label="图片(请重新上传图片)" className="pictureData" style={{ width: 300 }}>
                             {getFieldDecorator('pictureData', {
                                 valuePropName: 'fileList',
                                 getValueFromEvent: this.normFile,
@@ -252,7 +237,7 @@ class RegistrationForm extends Component {
                             </InputGroup>
                         </Form.Item>
                         <Form.Item >
-                            <Button type="primary" htmlType="submit" onClick={() => Modifygoodssuccess('success')} >
+                            <Button type="primary" htmlType="submit">
                                 提交
                             </Button>
                         </Form.Item>
