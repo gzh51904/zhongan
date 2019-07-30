@@ -51,8 +51,17 @@ class App extends React.Component {
   }
   goto(path) {
     let name = this.state.navs.filter(item => item.path === path)[0].name;
+    let paths = ''
+    if(path==='/home'){
+      paths = '/home/myhome'
+    }else if(path==='/discover'){
+      paths = '/discover/uhealth'
+    }
+    else{
+      paths = path
+    }
     this.props.history.push({
-      pathname: path
+      pathname: paths
     })
 
     this.setState({

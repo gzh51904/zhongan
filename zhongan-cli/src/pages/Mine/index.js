@@ -88,7 +88,8 @@ class Mine extends Component {
                     alert('该账号已被注册')
                 } else if (data.status === 200) {
                     this.setState({
-                        zhanghao: true
+                        zhanghao: true,
+                        yanzhengma:true
                     })
                 }
             })
