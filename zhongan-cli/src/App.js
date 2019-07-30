@@ -8,6 +8,7 @@ import Mine from './pages/Mine';
 import Goods from './pages/Goods';
 
 import { connect } from 'react-redux';
+import store from "./store";
 
 import "./css/App.scss";
 import "./css/base.css";
@@ -72,6 +73,8 @@ class App extends React.Component {
     })
   }
   render() {
+    let bottomshow = this.props.showbottom;
+    // console.log('app',this.props,bottomshow)
     return (
       <div className="App">
         <div className="mainBody">
@@ -86,7 +89,7 @@ class App extends React.Component {
             <Redirect from="/*" to="/404" />
           </Switch>
         </div>
-        <div className="mainBottom" style={{ display: this.props.showMainBottom }}>
+        {bottomshow?<div className="mainBottom" style={{ display: this.props.showMainBottom }}>
           {
             this.state.navs.map(item => {
               return (
@@ -100,7 +103,7 @@ class App extends React.Component {
               )
             })
           }
-        </div>
+        </div>:null}
       </div>
     );
   }
@@ -108,7 +111,8 @@ class App extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    showMainBottom: state.isShowMainBottom
+    showMainBottom: state.isShowMainBottom,
+    showbottom:state.bottomshow
   }
 }
 

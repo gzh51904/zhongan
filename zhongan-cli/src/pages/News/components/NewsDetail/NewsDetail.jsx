@@ -2,6 +2,8 @@ import React from "react";
 import './NewsDetail.scss';
 import api from '../../../../api';
 import { Player, BigPlayButton } from 'video-react';
+import {connect} from 'react-redux';
+import {change_bottom_show} from "../../../../store/Actions";
 
 class NewsDetail extends React.Component {
     constructor() {
@@ -16,6 +18,9 @@ class NewsDetail extends React.Component {
         this.gotoVideo = this.gotoVideo.bind(this);
     }
     componentWillMount() {
+        // console.log(this.props,change_bottom_show);
+        let {changebottom} = this.props;
+        changebottom(false);
         let ListId = window.location.hash.split('?')[1].split('&')[0].slice(-1);
         let articleId = window.location.hash.split('?')[1].split('&')[1].split('=')[1];
         api.get('http://47.94.157.240:2017/FeHelper', {
@@ -23,15 +28,19 @@ class NewsDetail extends React.Component {
                 type: ListId
             }
         }).then(res => {
-            console.log(res);
+            // console.log(res);
             let list = res.data[0].list.filter(item => item.articleId === articleId);
-            console.log(list);
+            // console.log(list);
             this.setState({
                 List: list,
                 VideoList: res.data[0].list.filter(item => item.video)
             })
-            console.log('挂载后', this.state.List); console.log('aa', this.state.List[0].title);
+            // console.log('挂载后', this.state.List); console.log('aa', this.state.List[0].title);
         })
+    }
+    componentWillUnmount(){
+        let {changebottom} = this.props;
+        changebottom(true);
     }
     gotoNews() {
         this.props.history.push('/news')
@@ -42,7 +51,7 @@ class NewsDetail extends React.Component {
     gotoVideo(id) {
         // console.log(this.props);
         let ListId = window.location.hash.split('?')[1].split('&')[0].slice(-1);
-        console.log(ListId ,id,this.props);
+        // console.log(ListId ,id,this.props);
         this.props.history.push({
             pathname: '/news/newsdetail',
             params: '',
@@ -59,7 +68,7 @@ class NewsDetail extends React.Component {
                         let da = new Date();
                         let date = da.toLocaleDateString();
                         let tim = da.toLocaleTimeString();
-                        console.log(tim);
+                        // console.log(tim);
                         return (
                             <div key={item.articleId} className='NewsDetailBox'>
                                 <div className='NewsDetailTop'>
@@ -131,7 +140,26 @@ class NewsDetail extends React.Component {
                                     </div>
 
                                 </div>
-
+                                <div className='NewsDetailInput'>
+                                    <div className='DetailInput'>
+                                        <i className='iconfont icon-shuxiebianji'></i>
+                                        <input type="text"/>
+                                    </div>
+                                    <div className='DetailInputBtn'>
+                                        <span>
+                                            <i className='iconfont icon-pinglun'></i>
+                                            <span>评论</span>
+                                        </span>
+                                        <span>
+                                            <i className='iconfont icon-like'></i>
+                                            <span>喜欢</span>
+                                        </span>
+                                        <span>
+                                            <i className='iconfont icon-hongbao'></i>
+                                            <span>分享赚积分</span>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         )
                     })
@@ -140,5 +168,18 @@ class NewsDetail extends React.Component {
         )
     }
 }
+
+let mapDispatchToProps = (dispatch,ownprops)=>{
+    return{
+        changebottom:(flg)=>{
+            dispatch(change_bottom_show(flg))
+        }
+    }
+}
+NewsDetail = connect(()=>{
+    return{
+
+    }
+},mapDispatchToProps)(NewsDetail)
 
 export default NewsDetail;
