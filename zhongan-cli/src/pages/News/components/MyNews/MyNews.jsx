@@ -38,9 +38,8 @@ class MyNews extends React.Component {
         this.goto = this.goto.bind(this);
     }
     componentWillMount(){
-        let path = this.props.location.pathname.replace(/(\/)(\w+)(\/)(\w+)(\/)(\w+)/, '$5$6');
-        console.log('ass',path,this.props.location.pathname);
-        let name = this.state.navs.filter(item=>item.path===path)[0].name;
+        var path=this.props.location.pathname.substring(this.props.location.pathname.lastIndexOf("/"));
+        let name = this.state.navs.filter(item=>item.path===path)[0]?this.state.navs.filter(item=>item.path===path)[0].name:'MyComment';
         this.setState({
             actname:name
         })

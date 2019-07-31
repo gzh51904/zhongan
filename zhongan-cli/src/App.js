@@ -61,16 +61,24 @@ class App extends React.Component {
   }
   componentWillMount() {
     //刷新高亮
-    let name;
-    this.state.navs.forEach(item=>{
-      if (this.props.location.pathname.indexOf(item.path) !== -1){
-        name = item.name
+    let name, a = false;
+    this.state.navs.forEach(item => {
+      if (this.props.location.pathname.indexOf(item.path) !== -1) {
+        name = item.name;
+        a = true;
         return
       }
     })
-    this.setState({
-      actBottomItem: name
-    })
+    if (a) {
+      this.setState({
+        actBottomItem: name
+      })
+    } else {
+      this.setState({
+        actBottomItem: 'Home'
+      })
+    }
+
   }
   render() {
     let bottomshow = this.props.showbottom;
@@ -89,7 +97,7 @@ class App extends React.Component {
             <Redirect from="/*" to="/404" />
           </Switch>
         </div>
-        {bottomshow?<div className="mainBottom" style={{ display: this.props.showMainBottom }}>
+        {bottomshow ? <div className="mainBottom" style={{ display: this.props.showMainBottom }}>
           {
             this.state.navs.map(item => {
               return (
@@ -103,7 +111,7 @@ class App extends React.Component {
               )
             })
           }
-        </div>:null}
+        </div> : null}
       </div>
     );
   }
@@ -112,7 +120,7 @@ class App extends React.Component {
 let mapStateToProps = (state) => {
   return {
     showMainBottom: state.isShowMainBottom,
-    showbottom:state.bottomshow
+    showbottom: state.bottomshow
   }
 }
 
