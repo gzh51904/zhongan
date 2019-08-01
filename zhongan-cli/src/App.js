@@ -8,6 +8,7 @@ import Mine from './pages/Mine';
 import Goods from './pages/Goods';
 
 import { connect } from 'react-redux';
+import store from "./store";
 
 import "./css/App.scss";
 import "./css/base.css";
@@ -50,8 +51,17 @@ class App extends React.Component {
   }
   goto(path) {
     let name = this.state.navs.filter(item => item.path === path)[0].name;
+    let paths = ''
+    if(path==='/home'){
+      paths = '/home/myhome'
+    }else if(path==='/discover'){
+      paths = '/discover/uhealth'
+    }
+    else{
+      paths = path
+    }
     this.props.history.push({
-      pathname: path
+      pathname: paths
     })
 
     this.setState({
@@ -60,18 +70,28 @@ class App extends React.Component {
   }
   componentWillMount() {
     //刷新高亮
-    let name;
-    this.state.navs.forEach(item=>{
-      if (this.props.location.pathname.indexOf(item.path) !== -1){
-        name = item.name
+    let name, a = false;
+    this.state.navs.forEach(item => {
+      if (this.props.location.pathname.indexOf(item.path) !== -1) {
+        name = item.name;
+        a = true;
         return
       }
     })
-    this.setState({
-      actBottomItem: name
-    })
+    if (a) {
+      this.setState({
+        actBottomItem: name
+      })
+    } else {
+      this.setState({
+        actBottomItem: 'Home'
+      })
+    }
+
   }
   render() {
+    let bottomshow = this.props.showbottom;
+    // console.log('app',this.props,bottomshow)
     return (
       <div className="App">
         <div className="mainBody">
@@ -86,7 +106,7 @@ class App extends React.Component {
             <Redirect from="/*" to="/404" />
           </Switch>
         </div>
-        <div className="mainBottom" style={{ display: this.props.showMainBottom }}>
+        {bottomshow ? <div className="mainBottom" style={{ display: this.props.showMainBottom }}>
           {
             this.state.navs.map(item => {
               return (
@@ -100,7 +120,7 @@ class App extends React.Component {
               )
             })
           }
-        </div>
+        </div> : null}
       </div>
     );
   }
@@ -108,7 +128,8 @@ class App extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    showMainBottom: state.isShowMainBottom
+    showMainBottom: state.isShowMainBottom,
+    showbottom: state.bottomshow
   }
 }
 

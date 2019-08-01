@@ -16,11 +16,19 @@ class RenderList extends React.Component{
          )
 
     }
+    componentWillUnmount() {
+        this.setState = (state, callback) => {
+            return
+        }
+    }
     async componentWillMount(){
+       
         let {data} = await axios.get('http://47.94.157.240:2017/zhongangoods',{
             params:{categoryOneName:this.props.type}
         });
-        // console.log(data);
+        // this.setState = (state, callback) => {
+        //     return
+        // }
         let typearr = [];
         data.forEach(item=>{
             if(typearr.length===0){
