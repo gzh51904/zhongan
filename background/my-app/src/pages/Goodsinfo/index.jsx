@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
-<<<<<<< HEAD
-import { Breadcrumb, Icon, Table,message, Button,Divider, Spin,Alert,BackTop,notification,Modal} from 'antd';
-=======
-import { Breadcrumb, Icon, Table, message, Button, Divider, Spin, Alert, BackTop, notification } from 'antd';
->>>>>>> d78cf4c58a22731e901d192169f599f38d1069c3
+import { Breadcrumb, Table, message, Button, Divider, BackTop, Modal } from 'antd';
 import axios from 'axios';
 
-import './Goodsinfo.scss'
+import './Goodsinfo.scss';
 
 const { confirm } = Modal;
 
@@ -21,7 +17,6 @@ class Goodsinfo extends Component {
             // data: [],
             pagination: {},
         }
-
         this.modifyItem = this.modifyItem.bind(this);
         this.removeItem = this.removeItem.bind(this);
     }
@@ -57,15 +52,13 @@ class Goodsinfo extends Component {
             },
             type: 'json',
         }).then(data => {
-            console.log(data)
+            // console.log(data)
             const pagination = { ...this.state.pagination };
-
             message.success('商品加载成功！', 2.0)
-
             // Read total count from server
             // pagination.total = data.totalCount;
             // console.log(data.data.length);
-            pagination.total = data.data.length + 1;
+            pagination.total = data.data.length;
             this.setState({
                 loading: false,
                 goodslist: data.data,
@@ -89,13 +82,11 @@ class Goodsinfo extends Component {
         this.setState({ selectedRowKeys });
     };
     modifyItem(recordData) {
-        console.log(666)
-        console.log("recordData:", recordData)
+        // console.log(666)
+        // console.log("recordData:", recordData)
         window.localStorage.setItem('param', recordData.goodsCode)
         this.props.history.push('/modifygoods')
-    }
-<<<<<<< HEAD
-   
+    };
     removeItem(item){
         confirm({
             title: '你真的要删除该商品?',
@@ -110,38 +101,12 @@ class Goodsinfo extends Component {
                 }) 
                 .catch(function (error) {
                     console.log(error)
-            }) ;
-                },
-                onCancel:()=>{
-                    message.success('取消删除！', 0.5)
-                },
-          });
-        // // console.log("item",item)
-        // axios.delete('http://47.94.157.240:2017/zhongangoods',{params:{goodsCode:item.goodsCode}}
-        //     ).then( (response) =>{
-        //         // console.log("删除成功")
-        //         message.success('商品删除成功！', 1.5)
-        //     this.fetch();
-        //     }) 
-        //     .catch(function (error) {
-        //         console.log(error)
-        //     }) ;
-            
-=======
-
-    removeItem(item) {
-        // console.log("item",item)
-        axios.delete('http://47.94.157.240:2017/zhongangoods', { params: { goodsCode: item.goodsCode } }
-        ).then((response) => {
-            // console.log("删除成功")
-            message.success('商品删除成功！', 1.5)
-            this.fetch();
-        })
-            .catch(function (error) {
-                console.log(error)
-            });
-
->>>>>>> d78cf4c58a22731e901d192169f599f38d1069c3
+                });
+            },
+            onCancel:()=>{
+                message.success('取消删除！', 0.5)
+            },
+        });
     }
 
     render() {
@@ -153,7 +118,7 @@ class Goodsinfo extends Component {
         const hasSelected = selectedRowKeys.length > 0;
         const columns = [
             {
-                title: 'Picture',
+                title: '图片',
                 align: 'center',
                 width: 100,
                 // dataIndex: 'imgurl',
@@ -189,27 +154,22 @@ class Goodsinfo extends Component {
                 align: 'center',
                 width: 100
             }, {
-                title: 'Action',
+                title: '操作',
                 key: 'action',
                 align: 'center',
                 width: 160,
                 render: (text, record) => (
                     <span>
-                        {/** <a className="modifyBtn" href="javascript:;">修改</a> */}
-                        {/**<Button type="primary" size="small">修改</Button> */}
-                        <Button type="primary" size="small" onClick={this.modifyItem.bind(this, record)}>修改</Button>
+                        <Button type="primary" size="small" style={{margin:'3px 0px'}} onClick={this.modifyItem.bind(this, record)}>修改</Button>
                         <Divider type="vertical" />
-                        {/** <a className="downBtn" href="javascript:;">下架</a> */}
-                        <Button type="success" size="small">下架</Button>
+                        <Button type="success" style={{margin:'3px 0px'}} size="small">下架</Button>
                         <Divider type="vertical" />
-                        {/** <a className="deleteBtn" href="javascript:;">删除</a> */}
                         <Button shape="circle" icon="delete" size="small" type="danger" onClick={this.removeItem.bind(this, record)} />
                         <Divider type="vertical" />
                     </span>
                 )
             }
         ];
-
         return (
             <div>
                 <Breadcrumb style={{ margin: '16px 0' }}>
