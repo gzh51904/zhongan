@@ -175,7 +175,7 @@ class RegistrationForm extends Component {
               <Breadcrumb.Item>修改商品</Breadcrumb.Item>
             </Breadcrumb>
             <div className="inputContent" style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                <Form onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.handleSubmit} className="inputContentSon">
                     <Form.Item label="产品名称" className="title">
                     {getFieldDecorator('title', {
                         rules: [{ required: true, message: '请输入', whitespace: true }],
@@ -212,13 +212,13 @@ class RegistrationForm extends Component {
                             </Upload>
                           )
                         }
-                        <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
-                          <img alt="example" style={{ width: '100%' }} src={previewImage} />
-                        </Modal>
-                      <Card className="picCart" style={{ width: 102 }} cover={<img alt="example" src={this.state.showCart}/>}>
-                        <p>修改前的图片</p>
-                      </Card>
+                      <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
+                        <img alt="example" style={{ width: '100%' }} src={previewImage} />
+                      </Modal>
                     </Form.Item>
+                    <Card className="picCart" style={{ width: 102 }} cover={<img alt="example" src={this.state.showCart}/>}>
+                      <p>修改前的图片</p>
+                    </Card>
                     <Form.Item label="价格" className="price">
                     {getFieldDecorator('price', {
                         rules: [{ required: true, message: '请输入', whitespace: true }],

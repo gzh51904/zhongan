@@ -47,18 +47,23 @@ fetch = (params = {}) => {
         },
         type: 'json',
     }).then(data => {
-        // console.log(data)
-        const pagination = { ...this.state.pagination };
-        message.success('用户加载成功！', 2.0)
-        // Read total count from server
-        // pagination.total = data.totalCount;
-        // console.log(data.data.length);
-        pagination.total = data.data.length;
-        this.setState({
-            loading: false,
-            userlist: data.data,
-            pagination,
-        });
+      console.log("data",data)
+      const pagination = { ...this.state.pagination };
+
+        if(data.data===[]){
+          this.setState({
+            userlist: []
+          })
+        }else{
+          message.success('用户加载成功！', 2.0)
+          pagination.total = data.data.length;
+          this.setState({
+              loading: false,
+              userlist: data.data,
+              pagination,
+          });
+        }
+
     });
 };
   start = () => {
@@ -78,28 +83,28 @@ fetch = (params = {}) => {
   };
   delAccount(record){
     // console.log("record",record)
-    // console.log("record.phone",record.phone)
-    confirm({
-      title: '你真的要删除该用户?',
-      content: '删除后不可恢复，请谨慎操作！',
-      okType: 'danger',
-      okText: 'Yes',
-      cancelText: 'No',
-      onOk:()=> {
-          axios.delete('http://47.94.157.240:2017/reg',{params:{phone:record.phone}}
-          ).then( (response) =>{
-              // console.log("删除成功")
-              message.success('用户删除中！', 0.5)
-              this.fetch();
-          }) 
-          .catch(function (error) {
-              console.log(error)
-          });
-      },
-      onCancel:()=>{
-          message.success('取消删除！', 0.5)
-      },
-  });
+    console.log("record.phone",record.phone)
+      confirm({
+        title: '你真的要删除该用户?',
+        content: '删除后不可恢复，请谨慎操作！',
+        okType: 'danger',
+        okText: 'Yes',
+        cancelText: 'No',
+        onOk:()=> {
+            axios.delete('http://47.94.157.240:2017/reg',{params:{phone:record.phone}}
+            ).then( (response) =>{
+                // console.log("删除成功")
+                message.success('用户删除中！', 0.5)
+                this.fetch();
+            }) 
+            .catch(function (error) {
+                console.log(error)
+            });
+        },
+        onCancel:()=>{
+            message.success('取消删除！', 0.5)
+        },
+    });
   }
   render(){
     const { loading, selectedRowKeys } = this.state;
@@ -153,7 +158,9 @@ fetch = (params = {}) => {
               <span style={{ marginLeft: 8 }}>
                 {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
               </span>
-            </div>
+          </div>
+          {
+            this.state.userlist.length===0?null:
             <Table 
               rowSelection={rowSelection} 
               columns={columns} 
@@ -163,6 +170,8 @@ fetch = (params = {}) => {
               loading={this.state.loading}
               onChange={this.handleTableChange}
             />
+          }
+           
           </div>
         </div>
         <div className="backTop">
@@ -173,6 +182,5 @@ fetch = (params = {}) => {
     )
   }
 }
-
 
 export default Userinfo;

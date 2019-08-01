@@ -3,21 +3,33 @@
 }
 
 .bigBox {
+
     .inputContent {
-        .pictureData {
+        padding: 30px 80px 10px 50px !important;
+
+        .inputContentSon {
+            position: relative;
+
+            .pictureData {
+                width: 300px;
+            }
+
             .picCart {
-                float: right;
-                margin-right: 300px;
+                position: absolute;
+                top: 246px;
+                left: 150px;
                 vertical-align: center;
                 text-align: center;
 
                 p {
                     font-size: 8px;
                     line-height: 8px;
-                    margin-bottom: 10px;
-                    color:red;
+                    margin: 10px 0px;
+                    color: red;
                 }
             }
         }
+
     }
+
 }

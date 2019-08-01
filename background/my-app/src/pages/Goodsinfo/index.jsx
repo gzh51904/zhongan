@@ -186,16 +186,18 @@ class Goodsinfo extends Component {
                                 {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
                             </span>
                         </div>
-
-                        <Table
-                            rowSelection={rowSelection}
-                            columns={columns}
-                            rowKey={record => record._id}
-                            dataSource={this.state.goodslist}
-                            pagination={this.state.pagination}
-                            loading={this.state.loading}
-                            onChange={this.handleTableChange}
-                        />
+                        {
+                            this.state.userlist.length===0?null:
+                            <Table
+                                rowSelection={rowSelection}
+                                columns={columns}
+                                rowKey={record => record._id}
+                                dataSource={this.state.goodslist}
+                                pagination={this.state.pagination}
+                                loading={this.state.loading}
+                                onChange={this.handleTableChange}
+                            />
+                        }
                     </div>
                 </div>
                 <div className="backTop">

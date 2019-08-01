@@ -123,36 +123,39 @@ class NormalLoginForm  extends Component{
         return (
         !islogined?
         <div className="LoginInterFace">
-            <Form onSubmit={this.handleSubmit} className="login-form">
-                <Form.Item>
-                    {getFieldDecorator('username', {
-                        rules: [{ required: true, message: 'Please input your username!' }],
-                    })(
-                        <Input
-                            className="usernameContent"
-                            prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            placeholder="Username"
-                        />
-                    )}
-                </Form.Item>
-                <Form.Item>
-                    {getFieldDecorator('password', {
-                        rules: [{ required: true, message: 'Please input your Password!' }],
-                    })(
-                        <Input
-                            className="passwordContent"
-                            prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            type="password"
-                            placeholder="Password"
-                        />
-                    )}
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        登录
-                    </Button>
-                </Form.Item>
-            </Form>
+            <div className="LoginInterFaceSon">
+            <h3>后台管理系统</h3>
+                <Form onSubmit={this.handleSubmit} className="login-form">
+                    <Form.Item>
+                        {getFieldDecorator('username', {
+                            rules: [{ required: true, message: 'Please input your username!' }],
+                        })(
+                            <Input
+                                className="usernameContent"
+                                prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                placeholder="Username"
+                            />
+                        )}
+                    </Form.Item>
+                    <Form.Item>
+                        {getFieldDecorator('password', {
+                            rules: [{ required: true, message: 'Please input your Password!' }],
+                        })(
+                            <Input
+                                className="passwordContent"
+                                prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                type="password"
+                                placeholder="Password"
+                            />
+                        )}
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" className="login-form-button">
+                            登录
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </div>
         </div>    
         :        
         <div className="app">
