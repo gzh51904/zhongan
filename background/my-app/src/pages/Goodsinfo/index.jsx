@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
-<<<<<<< HEAD
 import { Breadcrumb, Icon, Table,message, Button,Divider, Spin,Alert,BackTop,notification,Modal} from 'antd';
-=======
-import { Breadcrumb, Icon, Table, message, Button, Divider, Spin, Alert, BackTop, notification } from 'antd';
->>>>>>> d78cf4c58a22731e901d192169f599f38d1069c3
 import axios from 'axios';
 
 import './Goodsinfo.scss'
@@ -94,7 +90,6 @@ class Goodsinfo extends Component {
         window.localStorage.setItem('param', recordData.goodsCode)
         this.props.history.push('/modifygoods')
     }
-<<<<<<< HEAD
    
     removeItem(item){
         confirm({
@@ -127,21 +122,6 @@ class Goodsinfo extends Component {
         //         console.log(error)
         //     }) ;
             
-=======
-
-    removeItem(item) {
-        // console.log("item",item)
-        axios.delete('http://47.94.157.240:2017/zhongangoods', { params: { goodsCode: item.goodsCode } }
-        ).then((response) => {
-            // console.log("删除成功")
-            message.success('商品删除成功！', 1.5)
-            this.fetch();
-        })
-            .catch(function (error) {
-                console.log(error)
-            });
-
->>>>>>> d78cf4c58a22731e901d192169f599f38d1069c3
     }
 
     render() {
