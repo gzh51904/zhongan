@@ -35,7 +35,7 @@ handleTableChange = (pagination, filters, sorter) => {
 };
 
 fetch = (params = {}) => {
-    console.log('params:', params);
+    // console.log('params:', params);
     this.setState({ loading: true });
     axios({
         url: 'http://47.94.157.240:2017/users',
@@ -46,9 +46,9 @@ fetch = (params = {}) => {
         },
         type: 'json',
     }).then(({data}) => {
-      console.log("data",data)
-      console.log("datadata",data.data)
-      console.log("len",data.data.length)
+      // console.log("data",data)
+      // console.log("datadata",data.data)
+      // console.log("len",data.data.length)
       const pagination = { ...this.state.pagination };
       
         message.success('用户加载成功！', 2.0)
@@ -77,7 +77,7 @@ fetch = (params = {}) => {
   };
   delAccount(record){
     // console.log("record",record)
-    console.log("record.phone",record.phone)
+    // console.log("record.phone",record.phone)
       confirm({
         title: '你真的要删除该用户?',
         content: '删除后不可恢复，请谨慎操作！',

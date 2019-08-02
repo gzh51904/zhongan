@@ -51,9 +51,9 @@ class Goodsinfo extends Component {
             },
             type: 'json',
         }).then(data => {
-            console.log("data",data)
-            console.log("datadata",data.data)
-            console.log("len",data.data.data.length)
+            // console.log("data",data)
+            // console.log("datadata",data.data)
+            // console.log("len",data.data.data.length)
             const pagination = { ...this.state.pagination };
            
             message.success('商品加载成功！', 2.0)

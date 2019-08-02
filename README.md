@@ -8,6 +8,10 @@ https://www.zhongan.com/
 
 http://47.94.157.240:6767
 
+#### 后台管理系统地址
+
+http://47.94.157.240:6768
+
 #### 仓库地址
 
 git@github.com:gzh51904/zhongan.git

@@ -81,13 +81,13 @@ class NormalLoginForm  extends Component{
         this.props.form.validateFieldsAndScroll((err, values) => {
           if (!err) {
             let info = values;
-            console.log("info",info)
+            // console.log("info",info)
             axios.get('http://47.94.157.240:2017/adm',{params:{AdmName:info.username,AdmPassword:info.password}})
             .then( (response) =>{
                 // message.success('用户添加成功！', 1.5)
                 // 重置表单输入为空
                 // this.props.form.resetFields();
-                console.log("response",response)
+                // console.log("response",response)
                 setCookie('islogined',true)
                 this.setState({
                     islogined:true
@@ -101,7 +101,7 @@ class NormalLoginForm  extends Component{
       };
     componentWillMount(){
         if(getCookie('islogined')==="true"){
-            console.log(666)
+            // console.log(666)
             this.setState({
                 islogined:true
             })
