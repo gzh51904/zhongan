@@ -22,24 +22,24 @@ class RenderList extends React.Component{
         }
     }
     componentDidMount(){
-        let hun = document.querySelector('.hun')
-        hun.addEventListener('scroll', (e)=>{
+        // let hun = document.querySelector('.hun')
+        // hun.addEventListener('scroll', (e)=>{
          
-        })
-        setTimeout(()=>{
- console.log(hun.clientTop)
-        },2000)
+        // })
+        // setTimeout(()=>{
+        //     // console.log(hun.clientTop)
+        // },2000)
        
     }
     async componentWillMount(){
-       
-        let {data} = await axios.get('http://47.94.157.240:2017/zhongangoods',{
+        let {data} = await axios.get('http://47.94.157.240:2017/zhongAn',{
             params:{categoryOneName:this.props.type}
         });
         // this.setState = (state, callback) => {
         //     return
-        // }
+
         let typearr = [];
+        // console.log(data)
         data.forEach(item=>{
             if(typearr.length===0){
                 typearr.unshift(item.categoryTwoName)
@@ -56,7 +56,7 @@ class RenderList extends React.Component{
         })
 
     }
-z
+
     render(){
         return <div className='g_blank'>
         <div className="g_twotab">
@@ -90,8 +90,8 @@ z
               ) 
           })
        }
-       <div style={{width:'100%',height:'400px'}}></div>
-    <div className="hun" style={{width:'100%',height:'200px'}}></div>
+       {/* <div style={{width:'100%',height:'400px'}}></div> */}
+    {/* <div className="hun" style={{width:'100%',height:'200px'}}></div> */}
   </div>
     }
 }
