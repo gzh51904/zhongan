@@ -8,7 +8,7 @@ import Mine from './pages/Mine';
 import Goods from './pages/Goods';
 
 import { connect } from 'react-redux';
-import store from "./store";
+// import store from "./store";
 
 import "./css/App.scss";
 import "./css/base.css";

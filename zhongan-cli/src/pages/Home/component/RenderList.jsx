@@ -21,6 +21,16 @@ class RenderList extends React.Component{
             return
         }
     }
+    componentDidMount(){
+        let hun = document.querySelector('.hun')
+        hun.addEventListener('scroll', (e)=>{
+         
+        })
+        setTimeout(()=>{
+ console.log(hun.clientTop)
+        },2000)
+       
+    }
     async componentWillMount(){
        
         let {data} = await axios.get('http://47.94.157.240:2017/zhongangoods',{
@@ -46,7 +56,7 @@ class RenderList extends React.Component{
         })
 
     }
-
+z
     render(){
         return <div className='g_blank'>
         <div className="g_twotab">
@@ -80,7 +90,8 @@ class RenderList extends React.Component{
               ) 
           })
        }
-
+       <div style={{width:'100%',height:'400px'}}></div>
+    <div className="hun" style={{width:'100%',height:'200px'}}></div>
   </div>
     }
 }

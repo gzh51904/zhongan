@@ -1,5 +1,41 @@
+// #components-form-demo-normal-login .login-form {
+//   max-width: 300px;
+// }
+// #components-form-demo-normal-login .login-form-forgot {
+//   float: right;
+// }
+// #components-form-demo-normal-login .login-form-button {
+//   width: 100%;
+// }
 .logo {
   height: 32px;
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
+}
+.LoginInterFace{
+  .login-form{
+    .usernameContent{
+
+    }
+    .passwordContent{
+      
+    }
+  }
+}
+
+
+.app {
+  .aside {
+    .asideLayout {
+      .asideSider {
+        .asideMenu {
+          .asideMenuItem {
+            .anticon {
+              margin-top: 15px !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }
