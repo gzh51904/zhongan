@@ -20,7 +20,7 @@ const props = {
     },
     onChange(info) {
       if (info.file.status !== 'uploading') {
-        console.log(info.file, info.fileList);
+        // console.log(info.file, info.fileList);
       }
       if (info.file.status === 'done') {
         message.success(`${info.file.name} 文件上传成功`);
@@ -67,7 +67,7 @@ class RegistrationForm extends Component {
     }
     handleSubmit = e => {//提交函数，在此函数中你可以通过getFieldsValue方法拿到表单数据
         e.preventDefault();
-        console.log(666)
+        // console.log(666)
         this.props.form.validateFieldsAndScroll((err, values) => {
             // console.log("this.props.form",this.props.form)
             if (!err) {
@@ -77,31 +77,31 @@ class RegistrationForm extends Component {
                 let { imageUrl,goodsCode } = this.state
                 values.imageUrl = JSON.stringify(imageUrl);
                 values.goodsCode = JSON.stringify(goodsCode);
-                console.log('values', values);
+                // console.log('values', values);
                 values.imageUrl =  'http://47.94.157.240:2017/' + values.pictureData[0].response.path
                 values.goodsCode = Date.now().toString() // 将Date.now()转为字符串
                 // http://47.94.157.240:2019/uploads\chunqiu-1564310841519.jpg
                 
                 let info = values
-                    console.log("info",info)  
+                    // console.log("info",info)  
                 
                 axios.post('http://47.94.157.240:2017/zhongangoods',{
                     ...info
                 }).then(response=>{
                     // values = this.state.empty
-                    console.log(response)
+                    // console.log(response)
 
                     // 重置表单输入为空
                     this.props.form.resetFields();
 
                 }).catch(function (error) {
-                console.log(error);
+                    console.log(error);
                 }) 
             }
         });
     };
     normFile = e => {
-        console.log('Upload event:', e);
+        // console.log('Upload event:', e);
         if (Array.isArray(e)) {
           return e;
         }

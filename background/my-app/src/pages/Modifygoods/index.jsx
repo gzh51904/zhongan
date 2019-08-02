@@ -68,7 +68,7 @@ class RegistrationForm extends Component {
     componentWillMount(){ 
       // let dataid = (JSON.parse(window.localStorage.getItem("param")));
       let dataid = window.localStorage.getItem("param");
-      console.log("dataid",dataid)
+      // console.log("dataid",dataid)
       // axios.put('http://47.94.157.240:2017/zhongangoods',{})
       if(dataid===null){
         // setTimeout(()=>{
@@ -83,7 +83,7 @@ class RegistrationForm extends Component {
               form : data,
               showCart: data[0].imageUrl,
             })
-            console.log("form",this.state.form) 
+            // console.log("form",this.state.form) 
             // this.props.form.resetFields();
             // console.log("this.state.showCart",this.state.showCart) 
             setTimeout(()=>{
@@ -130,9 +130,9 @@ class RegistrationForm extends Component {
               // http://47.94.157.240:2019/uploads\chunqiu-1564310841519.jpg
               axios.post('http://47.94.157.240:2017/zhongangoods/q',{...info})
               .then( (response) =>{
-                  console.log("删除成功")
+                  // console.log("删除成功")
                   message.success('商品修改成功！', 1.5)
-                  console.log("values",values)
+                  // console.log("values",values)
                   // this.fetch();
                   // 重置表单输入为空
                   this.props.form.resetFields();
@@ -150,7 +150,7 @@ class RegistrationForm extends Component {
           });
     };
     normFile = e => {
-        console.log('Upload event:', e);
+        // console.log('Upload event:', e);
         if (Array.isArray(e)) {
           return e;
         }

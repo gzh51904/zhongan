@@ -19,7 +19,7 @@ class RegistrationForm extends Component {
       this.props.form.validateFieldsAndScroll((err, values) => {
         if (!err) {
           let info = values;
-          console.log("info",info)
+          // console.log("info",info)
           axios.post('http://47.94.157.240:2017/reg',{params:info})
           .then( (response) =>{
               message.success('用户添加成功！', 1.5)
