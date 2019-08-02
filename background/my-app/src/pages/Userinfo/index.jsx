@@ -35,7 +35,7 @@ handleTableChange = (pagination, filters, sorter) => {
 };
 
 fetch = (params = {}) => {
-    // console.log('params:', params);
+    console.log('params:', params);
     this.setState({ loading: true });
     axios({
         url: 'http://47.94.157.240:2017/users',
@@ -45,24 +45,19 @@ fetch = (params = {}) => {
             ...params,
         },
         type: 'json',
-    }).then(data => {
+    }).then(({data}) => {
       console.log("data",data)
+      console.log("datadata",data.data)
+      console.log("len",data.data.length)
       const pagination = { ...this.state.pagination };
-
-        if(data.data===[]){
-          this.setState({
-            userlist: []
-          })
-        }else{
-          message.success('用户加载成功！', 2.0)
-          pagination.total = data.data.length;
-          this.setState({
-              loading: false,
-              userlist: data.data,
-              pagination,
-          });
-        }
-
+      
+        message.success('用户加载成功！', 2.0)
+        pagination.total = data.data.length;
+        this.setState({
+            loading: false,
+            userlist: data.data,
+            pagination,
+        });
     });
 };
   start = () => {
@@ -160,16 +155,25 @@ fetch = (params = {}) => {
           </div>
           {
             // 当列表清空时，userlist=data.data=[],ui框架会报错，故做此三目运算
-            this.state.userlist.length===0?null:
+            this.state.userlist.length===0
+            ?
             <Table 
               rowSelection={rowSelection} 
-              columns={columns} 
+              columns={columns}
+              loading={this.state.loading}
+              pagination={this.state.pagination}
+              onChange={this.handleTableChange}
+            />
+            :
+            <Table 
+              rowSelection={rowSelection} 
+              columns={columns}
               rowKey={record => record._id}
               dataSource={this.state.userlist} 
               pagination={this.state.pagination}
               loading={this.state.loading}
               onChange={this.handleTableChange}
-            />
+              />
           }
           </div>
         </div>

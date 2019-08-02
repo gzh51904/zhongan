@@ -44,7 +44,6 @@ class Goodsinfo extends Component {
         this.setState({ loading: true });
         axios({
             url: 'http://47.94.157.240:2017/zhongangoods',
-            // url: 'http://47.94.157.240:2019/goodlist',
             method: 'get',
             data: {
                 results: 10,
@@ -52,16 +51,16 @@ class Goodsinfo extends Component {
             },
             type: 'json',
         }).then(data => {
-            // console.log(data)
+            console.log("data",data)
+            console.log("datadata",data.data)
+            console.log("len",data.data.data.length)
             const pagination = { ...this.state.pagination };
+           
             message.success('商品加载成功！', 2.0)
-            // Read total count from server
-            // pagination.total = data.totalCount;
-            // console.log(data.data.length);
             pagination.total = data.data.length;
             this.setState({
                 loading: false,
-                goodslist: data.data,
+                goodslist: data.data.data,
                 pagination,
             });
         });
@@ -188,7 +187,17 @@ class Goodsinfo extends Component {
                         </div>
                         {
                             // 当列表清空时，userlist=data.data=[],ui框架会报错，故做此三目运算
-                            this.state.userlist.length===0?null:
+                            this.state.goodslist.length===0
+                            ?
+                            <Table 
+                                rowSelection={rowSelection}
+                                columns={columns}
+                                rowKey={record => record._id}
+                                pagination={this.state.pagination}
+                                loading={this.state.loading}
+                                onChange={this.handleTableChange}
+                            />
+                            :
                             <Table
                                 rowSelection={rowSelection}
                                 columns={columns}
