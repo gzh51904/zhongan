@@ -187,6 +187,7 @@ class Goodsinfo extends Component {
                             </span>
                         </div>
                         {
+                            // 当列表清空时，userlist=data.data=[],ui框架会报错，故做此三目运算
                             this.state.userlist.length===0?null:
                             <Table
                                 rowSelection={rowSelection}

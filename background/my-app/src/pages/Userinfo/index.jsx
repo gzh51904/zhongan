@@ -39,7 +39,6 @@ fetch = (params = {}) => {
     this.setState({ loading: true });
     axios({
         url: 'http://47.94.157.240:2017/users',
-        // url: 'http://47.94.157.240:2019/goodlist',
         method: 'get',
         data: {
             results: 10,
@@ -160,6 +159,7 @@ fetch = (params = {}) => {
               </span>
           </div>
           {
+            // 当列表清空时，userlist=data.data=[],ui框架会报错，故做此三目运算
             this.state.userlist.length===0?null:
             <Table 
               rowSelection={rowSelection} 
@@ -171,7 +171,6 @@ fetch = (params = {}) => {
               onChange={this.handleTableChange}
             />
           }
-           
           </div>
         </div>
         <div className="backTop">
