@@ -1,41 +1,65 @@
-// #components-form-demo-normal-login .login-form {
-//   max-width: 300px;
-// }
-// #components-form-demo-normal-login .login-form-forgot {
-//   float: right;
-// }
-// #components-form-demo-normal-login .login-form-button {
-//   width: 100%;
-// }
 .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
 }
-.LoginInterFace{
-  .login-form{
-    .usernameContent{
 
+.LoginInterFace {
+    width: 100%;
+    height: 100%;
+
+    .LoginInterFaceSon {
+        width: 100%;
+        height: 100%;
+        background: url(./assets/img/img1.jpg) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+
+        h3 {
+            position: absolute;
+            top: 10%;
+            left: 34%;
+            font-size: 70px;
+            color: #fff;
+        }
+
+        .login-form {
+            width: 450px;
+            height: 250px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 40px 115px;
+
+            .usernameContent {
+                width: 220px;
+            }
+
+            .passwordContent {
+                width: 220px;
+            }
+
+            .login-form-button {
+                margin: 0 80px;
+            }
+        }
     }
-    .passwordContent{
-      
-    }
-  }
 }
 
 
 .app {
-  .aside {
-    .asideLayout {
-      .asideSider {
-        .asideMenu {
-          .asideMenuItem {
-            .anticon {
-              margin-top: 15px !important;
+    .aside {
+        .asideLayout {
+            .asideSider {
+                .asideMenu {
+                    .asideMenuItem {
+                        .anticon {
+                            margin-top: 15px !important;
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
 }

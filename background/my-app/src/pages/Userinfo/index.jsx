@@ -35,24 +35,23 @@ handleTableChange = (pagination, filters, sorter) => {
 };
 
 fetch = (params = {}) => {
-    // console.log('params:', params);
+    console.log('params:', params);
     this.setState({ loading: true });
     axios({
         url: 'http://47.94.157.240:2017/users',
-        // url: 'http://47.94.157.240:2019/goodlist',
         method: 'get',
         data: {
             results: 10,
             ...params,
         },
         type: 'json',
-    }).then(data => {
-        // console.log(data)
-        const pagination = { ...this.state.pagination };
+    }).then(({data}) => {
+      console.log("data",data)
+      console.log("datadata",data.data)
+      console.log("len",data.data.length)
+      const pagination = { ...this.state.pagination };
+      
         message.success('用户加载成功！', 2.0)
-        // Read total count from server
-        // pagination.total = data.totalCount;
-        // console.log(data.data.length);
         pagination.total = data.data.length;
         this.setState({
             loading: false,
@@ -78,28 +77,28 @@ fetch = (params = {}) => {
   };
   delAccount(record){
     // console.log("record",record)
-    // console.log("record.phone",record.phone)
-    confirm({
-      title: '你真的要删除该用户?',
-      content: '删除后不可恢复，请谨慎操作！',
-      okType: 'danger',
-      okText: 'Yes',
-      cancelText: 'No',
-      onOk:()=> {
-          axios.delete('http://47.94.157.240:2017/reg',{params:{phone:record.phone}}
-          ).then( (response) =>{
-              // console.log("删除成功")
-              message.success('用户删除中！', 0.5)
-              this.fetch();
-          }) 
-          .catch(function (error) {
-              console.log(error)
-          });
-      },
-      onCancel:()=>{
-          message.success('取消删除！', 0.5)
-      },
-  });
+    console.log("record.phone",record.phone)
+      confirm({
+        title: '你真的要删除该用户?',
+        content: '删除后不可恢复，请谨慎操作！',
+        okType: 'danger',
+        okText: 'Yes',
+        cancelText: 'No',
+        onOk:()=> {
+            axios.delete('http://47.94.157.240:2017/reg',{params:{phone:record.phone}}
+            ).then( (response) =>{
+                // console.log("删除成功")
+                message.success('用户删除中！', 0.5)
+                this.fetch();
+            }) 
+            .catch(function (error) {
+                console.log(error)
+            });
+        },
+        onCancel:()=>{
+            message.success('取消删除！', 0.5)
+        },
+    });
   }
   render(){
     const { loading, selectedRowKeys } = this.state;
@@ -153,16 +152,29 @@ fetch = (params = {}) => {
               <span style={{ marginLeft: 8 }}>
                 {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
               </span>
-            </div>
+          </div>
+          {
+            // 当列表清空时，userlist=data.data=[],ui框架会报错，故做此三目运算
+            this.state.userlist.length===0
+            ?
             <Table 
               rowSelection={rowSelection} 
-              columns={columns} 
+              columns={columns}
+              loading={this.state.loading}
+              pagination={this.state.pagination}
+              onChange={this.handleTableChange}
+            />
+            :
+            <Table 
+              rowSelection={rowSelection} 
+              columns={columns}
               rowKey={record => record._id}
               dataSource={this.state.userlist} 
               pagination={this.state.pagination}
               loading={this.state.loading}
               onChange={this.handleTableChange}
-            />
+              />
+          }
           </div>
         </div>
         <div className="backTop">
@@ -173,6 +185,5 @@ fetch = (params = {}) => {
     )
   }
 }
-
 
 export default Userinfo;

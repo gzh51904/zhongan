@@ -41,7 +41,7 @@ class NormalLoginForm  extends Component{
                     ]
                  }
             ],
-            collapsed: false,
+            collapsed: false, // trigger显示隐藏
             islogined : false
         }
         this.goto = this.goto.bind(this);
@@ -53,6 +53,7 @@ class NormalLoginForm  extends Component{
             collapsed 
         })
     }
+    
     goto(path){
         // console.log(path)
         // // let current = this.state.navlists.lists.filter(item=>item.path==path)
@@ -120,46 +121,62 @@ class NormalLoginForm  extends Component{
         const { getFieldDecorator } = this.props.form;
         // console.log("this.props",this.props);
         let islogined = this.state.islogined;
+
+        let {history} = this.props; 
         return (
         !islogined?
         <div className="LoginInterFace">
-            <Form onSubmit={this.handleSubmit} className="login-form">
-                <Form.Item>
-                    {getFieldDecorator('username', {
-                        rules: [{ required: true, message: 'Please input your username!' }],
-                    })(
-                        <Input
-                            className="usernameContent"
-                            prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            placeholder="Username"
-                        />
-                    )}
-                </Form.Item>
-                <Form.Item>
-                    {getFieldDecorator('password', {
-                        rules: [{ required: true, message: 'Please input your Password!' }],
-                    })(
-                        <Input
-                            className="passwordContent"
-                            prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            type="password"
-                            placeholder="Password"
-                        />
-                    )}
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        登录
-                    </Button>
-                </Form.Item>
-            </Form>
+            <div className="LoginInterFaceSon">
+            <h3>后台管理系统</h3>
+                <Form onSubmit={this.handleSubmit} className="login-form">
+                    <Form.Item>
+                        {getFieldDecorator('username', {
+                            rules: [{ required: true, message: 'Please input your username!' }],
+                        })(
+                            <Input
+                                className="usernameContent"
+                                prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                placeholder="Username"
+                            />
+                        )}
+                    </Form.Item>
+                    <Form.Item>
+                        {getFieldDecorator('password', {
+                            rules: [{ required: true, message: 'Please input your Password!' }],
+                        })(
+                            <Input
+                                className="passwordContent"
+                                prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                type="password"
+                                placeholder="Password"
+                            />
+                        )}
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" className="login-form-button">
+                            登录
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </div>
         </div>    
         :        
         <div className="app">
             <div className="aside">
                 <Layout className="asideLayout" style={{ minHeight: '100vh' }}>
-                    <Sider className="asideSider" collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} >
-                        <Menu className="asideMenu" theme="dark" defaultSelectedKeys={['1']} mode="inline">
+                    <Sider 
+                        className="asideSider" 
+                        collapsible 
+                        collapsed={this.state.collapsed} 
+                        onCollapse={this.onCollapse}
+                       
+                        >
+                        <Menu 
+                        className="asideMenu" 
+                        theme="dark" 
+                        defaultSelectedKeys={['/userinfo']} // 默认高亮
+                        selectedKeys={[history.location.pathname]} // 刷新后保持高亮
+                        mode="inline">
                             <Menu.Item className="asideMenuItem" key="1" style={{ margin:0, height:64, paddingTop:12 }}>
                                 <Icon className="asideMenuItemIcon" style={{ fontSize:20 }} type="cloud" theme="twoTone" />
                                 <span className="asideMenuItemSpan" style={{ fontSize:20 }}>后台管理系统</span>
@@ -177,7 +194,7 @@ class NormalLoginForm  extends Component{
                                 {
                                     item.lists.map(item=>{
                                         return (
-                                            <Menu.Item key={item.name} onClick={this.goto.bind(this,item.path)}><Icon type={item.icon}/>{item.title}</Menu.Item>
+                                            <Menu.Item key={item.path} onClick={this.goto.bind(this,item.path)}><Icon type={item.icon}/>{item.title}</Menu.Item>
                                         )
                                     })
                                 }
