@@ -75,7 +75,7 @@ class RegistrationForm extends Component {
         //   this.props.history.push('/goodsinfo')
         // },3000)
       }else{
-        axios.get('http://47.94.157.240:2017/zhongangoods',{params:{goodsCode:dataid}}) 
+        axios.get('http://47.94.157.240:2017/zhongangoods/modify',{params:{goodsCode:dataid}}) 
           .then( ({data}) =>{
             // console.log("data",data)
             // console.log("img",data[0].imageUrl)
